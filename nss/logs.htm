@@ -1,0 +1,260 @@
+<title>DogP's Nintendo Super System page</title>
+<body bgcolor="black">
+<font color="#FFFFFF">
+<h2>Nintendo Super System (and SNES) repair/diagnosis logs</h2>
+<h3><a href="./index.htm">Main Nintendo Super System Page</a></h3>
+<h2>Table of contents</h2>
+<a href="#troubleshooting">Troubleshooting Tips</a><br>
+<a href="#motherboards">Super System motherboard repair log</a><br>
+<a href="#cpu_fail">CPU failures</a><br>
+<a href="#ppu_fail">PPU failures</a><br>
+<a href="#whatif">"What-if" failures</a><br>
+<br>
+<br>
+<a name="troubleshooting"></a>
+<h3>Nintendo Super System / SNES troubleshooting tips</h3>
+-If working on a Nintendo Super System (arcade) motherboard, be sure to use a V3 BIOS (I've seen several faulty boards wouldn't boot to the menu on V1 or V2, even though the menu circuitry was fine)<br><br>
+-Again, on the Nintendo Super System, be sure to check the +5V at the board and adjust.  The stability of the system doesn't seem very sensitive to an exact voltage, but there is no voltage regulator (like the SNES), so the entire SNES circuitry will be running directly from the +5V from the power supply.  If the voltage is adjusted too high, it's likely to significantly shorten the life of the chips (possibly the cause of some of the failures I came across).<br><br>
+-A bad CPU seems to be the most common failure, and has many different symptoms (see specific failures below)<br><br>
+-My experience is that PPU1, PPU2, and VRAM failures don't affect game logic, just the display of the game (though in some cases will cause certain games not to boot).  So, for example if the Mario Kart track looks bad and it thinks you're off the track and Lakitu keeps picking you up, it's likely a CPU problem (or possibly WRAM)... but if the game still plays fine, I'd suspect a PPU problem (though you can have CPU problems that don't affect gameplay).<br><br>
+-Statistics: While working with Super System and SNES motherboards, I came across 24 bad CPUs, 4 bad PPU1s, 4 bad PPU2s, 1 bad APU, and no bad WRAMs or VRAMs... if you suspect either a bad CPU or WRAM, I'd say odds are better that the CPU is bad.<br><br>
+-A bad CPU can cause controller problems.  I'd check the obvious first (wiring, controllers, etc. on the Super System, and swap the controller, ports, ribbon on the SNES), though if that all checks out, some controller problems I've encountered from CPUs include dead controls and buttons seemingly connected together (press one button and multiples show as pressed).<br><br>
+-A bad APU can cause the system to not boot (not the most likely cause, but it's easy to swap on boards with the sound module).<br><br>
+-I highly recommend making/borrowing/buying a Burn-In test cart (described <a href="https://tcrf.net/SNES_Burn-In_Test_Cart">HERE</a> ).  Even when other games won't boot, many times it'll boot, test the hardware, and tell you which tests failed.  It won't necessarily tell you the bad chip, but you can make educated guesses from the results.<br><br>
+<img src="./test.jpg"><br><br>
+<br>
+<br>
+<a name="motherboards"></a>
+<h3>Nintendo Super System motherboard repair log</h3>
+-1-<br>
+Had gray screen issue<br>
+Determined the voltage to the video mixing chip was low, due to high resistance of R71<br>
+Replaced R71<br>
+R101 (for audio circuit) was also out of spec, so replaced that too<br>
+---FIXED---<br>
+<br>
+-2-<br>
+Some games worked, others had glitchy graphics (SMW looked fine, F-Zero had track issues)<br>
+Ran test cart, said bad DMA<br>
+Replaced SNES CPU<br>
+---FIXED---<br>
+<br>
+-3-<br>
+Would boot to menu, but when started, some games would play music with solid color screen, others would do nothing<br>
+Ran test cart, said bad HV Timer<br>
+Replaced SNES CPU<br>
+---FIXED---<br>
+<br>
+-4-<br>
+Had previously been worked on, had hacks, etc.<br>
+Would boot to menu, but when started, SNES half seemed mostly dead<br>
+Ran test cart, would show garbled main screen, when selected any sub-test, it locked up<br>
+Replaced SNES CPU
+Still had garbled graphics, but was able to run test... said bad VRAM, DMA, VRAM COUNT<br>
+Looked at rework of PPUs and noticed some pins on PPU1 had no solder.  Resoldered PPUs and it booted and everything looked good<br>
+There was also no sound.<br>
+Looking over the other hacks, someone had removed R101.  Replaced with ERJP 1/2W 10 ohm resistor.<br>
+---FIXED---<br>
+<br>
+-5-<br>
+Played some games fine, but mostly mode 7 games like F-Zero and Mario Kart had problems.  F-Zero was really jumpy when turning, and Mario Kart played fine by looking at the map, but the main screen had a scrambled track.  Super Mario World also showed a few minor glitches, like the bar of the rotating platform was jumpy.<br>
+Ran test cart, said bad MPY 8X8 and DIV 16/8<br>
+Replaced SNES CPU<br>
+---FIXED---<br>
+<br>
+-6-<br>
+Would boot to menu, but when started, SNES half seemed dead<br>
+Ran test cart, still dead<br>
+Replaced SNES CPU<br>
+---FIXED---<br>
+<br>
+-7-<br>
+Would boot to menu, but when started, SNES half seemed mostly dead (occasionally booted to garbage graphics)<br>
+Ran test cart, would show main screen, but when Burn-In Test selected, would show random Japanese characters in place of graphics<br>
+Replaced SNES CPU
+Passed all tests, but had some graphics problems (some colors wrong, glitchy vertical lines in some graphics, etc)<br>
+Replaced SNES PPU2<br>
+---FIXED---<br>
+<br>
+-8-<br>
+Would boot to menu, but when started, SNES half seemed dead (could hear it reboot occasionally)<br>
+Ran test cart, when selected any sub-test, it locked up<br>
+Replaced SNES CPU<br>
+---FIXED---<br>
+<br>
+-9-<br>
+Mostly worked, occasional black screen, some sound issues<br>
+Inspected board and noticed poor soldering on modifications<br>
+Solder didn't flow on resistor mod<br>
+Large glob of solder over both L55 and L56 (shorting both together, not each)<br>
+Had loud hum when plugged into the cabinet, though sounded fine on the testbench<br>
+Suspected power supply noise was getting through to audio circuitry due to old resistor/jumper wire modification<br>
+uninstalled old modification and installed upgraded original resistors<br>
+---FIXED---<br>
+<br>
+-10-<br>
+Sound not working properly<br>
+Inspected board and noticed solder pads configured for Mono audio<br>
+Soldered jumpers to original Stereo configuration<br>
+Audio worked on testbench, but not when installed in cabinet (cabinet has volume control connected to JAMMA edge, testbench has no control)<br>
+Audio is enabled by providing power to one side of potentiometer (JAMMA pin lowercase 'c').  Noticed the board was never powering this pin<br>
+Traced pin 'c' to Q15 (NPN Transistor marked "BR", likely BCW60DR), had good voltages in, but never "turned on"<br>
+Replaced with same type of transistor from dead SNES motherboard<br>
+---FIXED---<br>
+<br>
+-11-<br>
+Would boot to menu, but when started, some games would run with graphics issues, others would only show black screen<br>
+Ran test cart, said HV Timer failed<br>
+Replaced SNES CPU<br>
+---FIXED---<br>
+<br>
+-12-<br>
+Game plays fine, but when either Y or B are pressed, both were activated<br>
+Tested resistance between Y and B inputs, not shorted<br>
+Probed lines at IC52 (Parallel to Serial shift register) and CPU and everything looked fine<br>
+Replaced SNES CPU<br>
+---FIXED---<br>
+<br>
+-13-<br>
+Would boot to menu, but when started, SNES half seemed dead<br>
+Ran test cart, still dead<br>
+Replaced SNES APU<br>
+---FIXED---<br>
+<br>
+-14-<br>
+Would boot to menu, but when started, SNES half seemed dead<br>
+Ran test cart, would boot, but display garbage after selecting test<br>
+Replaced SNES CPU
+Test then showed VRAM HIGH FAIL, DMA FAIL, VRAM COUNT FAIL<br>
+Replaced SNES PPU1<br>
+---FIXED---<br>
+<br>
+-15-<br>
+Would boot, but all the graphics were blocky garbage, though you could tell that the games were playing (scrolling background, track, etc).<br>
+Replaced SNES PPU1<br>
+---FIXED---<br>
+Note: The +5V was adjusted to over 6.5V, which may have contributed to PPU1 failure<br>
+<br>
+-16-<br>
+Would boot to menu, but when started, some games would run with weird problems, some would lock up during boot<br>
+Ran test cart, passed all tests<br>
+Replaced SNES CPU<br>
+---FIXED---<br>
+<br>
+-17-<br>
+Would boot to menu, but when started, SNES half seemed dead<br>
+Ran test cart, still dead (occasionally showed menu and immediately locked up)<br>
+Replaced SNES CPU<br>
+---FIXED---<br>
+<br>
+-18-<br>
+Would boot to menu, but when started, SNES half seemed dead<br>
+Ran test cart, still dead<br>
+Replaced SNES CPU<br>
+---FIXED---<br>
+<br>
+<a name="cpu_fail"></a>
+<h3>Misc CPU failures</h3>
+<img src="./cpu.jpg"><br><br>
+Because of the large number of bad CPUs I encountered, I installed a QFP socket in a Super Famicom system to quickly test suspect CPUs and pulls from unknown motherboards.<br>
+<img src="./cpu_test_1.jpg"><br><br>
+<img src="./cpu_test_2.jpg"><br><br>
+1) Won't boot most games, test cart boots, but shows Japanese characters at burn-in test<br>
+2) Won't boot most games, test cart hangs at boot<br>
+3) Won't boot most games, test cart boots, but locks up after selecting any test<br>
+4) Won't boot most games, test cart boots, but locks up after selecting any test (and timer never increases)<br>
+5) Dead<br>
+6) Won't boot most games, test cart boots, but shows garbage at burn-in test<br>
+7) Dead<br>
+8) Dead<br>
+9) Dead<br>
+10) Dead<br>
+11) Dead<br>
+12) Dead<br>
+13) Plays most games fine, all tests pass, won't boot some games (SFA2, Yoshi's Island, etc)<br>
+14) Some games boot to garbage or audio only, test cart boots, HV Timer failed<br>
+15) Won't boot most games, test cart hangs at boot<br>
+16) Won't boot most games, test cart passes all tests<br>
+17) Some games boot to garbage or audio only, test cart boots, HV Timer failed<br>
+18) Everything works except dead controls<br>
+19) Everything works except lots of buttons appear shorted together (press one and lots of buttons are "pressed")<br>
+20) Everything works except Y and B appear shorted together (press one and both buttons are "pressed")<br>
+21) Some games work correctly, others have weird glitches (like floating shadows in F-Zero), test cart says DMA failed<br>
+<img src="./cpu_21-1.jpg"><br><br>
+22) Most games work correctly, some have weird sprite glitches (SFA2 bad flipped sprites, SMK karts on bottom map), some hang during boot (Yoshi's Island), test cart passes all tests<br>
+<img src="./cpu_22-1.jpg"><br><br>
+<img src="./cpu_22-2.jpg"><br><br>
+23) Lots of games play fine (like SMW, though the rotating bar is jumpy), but some act really weird (especially the track on Mode 7 games, and the ship on Star Fox is all over the place), test cart says MPY 8x8 and DIV 16/8 failed<br>
+<img src="./cpu_23-1.jpg"><br><br>
+<img src="./cpu_23-2.jpg"><br><br>
+<img src="./cpu_23-3.jpg"><br><br>
+24) Lots of games play fine, but some have a few small glitches (flickering graphics)<br>
+<img src="./cpu_24-1.jpg"><br><br>
+<img src="./cpu_24-2.jpg"><br><br>
+25) Won't boot most games, test cart passes all tests<br>
+26) Dead<br>
+27) Dead<br>
+<br>
+<a name="ppu_fail"></a>
+<h3>Misc PPU failures</h3>
+<img src="./ppu1.jpg"><br><br>
+_PPU1_<br>
+1) Blocky graphics, thick vertical lines, some games won't boot (Yoshi's Island), games run fine, fails test (can't read error)<br>
+<img src="./ppu1_1-1.jpg"><br><br>
+<img src="./ppu1_1-2.jpg"><br><br>
+2) Blocky graphics, some games won't boot (Yoshi's Island), games run fine, fails test (can't read error)<br>
+<img src="./ppu1_2-1.jpg"><br><br>
+<img src="./ppu1_2-2.jpg"><br><br>
+3) Almost everything is fine (Yoshi's Island has a few vertical lines in a few parts), games run fine, fails test (VRAM HIGH, DMA, VRAM COUNT failed)<br>
+<img src="./ppu1_3-1.jpg"><br><br>
+4) Blocky graphics, games run fine, fails test (can't read error)<br>
+<img src="./ppu1_4-1.jpg"><br><br>
+<img src="./ppu1_4-2.jpg"><br><br>
+<br>
+_PPU2_<br>
+<img src="./ppu2.jpg"><br><br>
+1) Missing a lot of objects, mostly missing red, some games won't boot (Star Fox), games run fine, fails test (CG RAM, EXT LATCH, HV TIMER, V224/V239 failed)<br>
+<img src="./ppu2_1-1.jpg"><br><br>
+<img src="./ppu2_1-2.jpg"><br><br>
+<img src="./ppu2_1-3.jpg"><br><br>
+<img src="./ppu2_1-4.jpg"><br><br>
+2) Colors wrong, jumpy horizontal scrolling, some games won't boot (Star Fox, SFA2), games run fine, fails test (can't see error)<br>
+<img src="./ppu2_2-1.jpg"><br><br>
+<img src="./ppu2_2-2.jpg"><br><br>
+<img src="./ppu2_2-3.jpg"><br><br>
+<img src="./ppu2_2-4.jpg"><br><br>
+3) Lots of wrong colors, flickery vertical lines through lots of graphics, missing some graphics, games run fine, passes test<br>
+<img src="./ppu2_3-1.jpg"><br><br>
+<img src="./ppu2_3-2.jpg"><br><br>
+<img src="./ppu2_3-3.jpg"><br><br>
+<img src="./ppu2_3-4.jpg"><br><br>
+4) Most colors seem tinted yellow, some wrong colors, some vertical lines through graphics, games run fine, passes test<br>
+<img src="./ppu2_4-1.jpg"><br><br>
+<img src="./ppu2_4-2.jpg"><br><br>
+<br>
+<a name="whatif"></a>
+<h3>"What-if" failures</h3>
+_WRAM_<br>
+<img src="./wram.jpg"><br><br>
+Dead or bad chip can cause dead system, weird behavior, lockups, etc.<br>
+Fails test (WRAM failed) if test is able to run<br>
+<br>
+_VRAM_<br>
+<img src="./vram.jpg"><br><br>
+_U4_<br>
+Colors wrong, wrong graphics, narrow vertical lines in graphics, games run fine<br>
+Fails test (VRAM HIGH failed)<br>
+<img src="./vram_u4-1.jpg"><br><br>
+<img src="./vram_u4-2.jpg"><br><br>
+<img src="./vram_u4-3.jpg"><br><br>
+<img src="./vram_u4-4.jpg"><br><br>
+<br>
+_U5_<br>
+Wrong graphics, narrow vertical lines in graphics, weird graphics combinations, lots of duplicated graphics top and bottom, games run fine<br>
+Fails test (VRAM LOW failed)<br>
+<img src="./vram_u5-1.jpg"><br><br>
+<img src="./vram_u5-2.jpg"><br><br>
+<img src="./vram_u5-3.jpg"><br><br>
+<img src="./vram_u5-4.jpg"><br><br>
+</font>
+</body>

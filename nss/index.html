@@ -1,0 +1,108 @@
+<title>DogP's Nintendo Super System page</title>
+<body bgcolor="black">
+<font color="#FFFFFF">
+I've acquired a lot of information on the Nintendo Super System over the years.  I'm trying to consolidate as much as possible on this page.  I'll continue to go through my notes and add new stuff as time allows.<br><br>
+<a href="./nss_logo.png"><img src="./nss_small_logo.png"></a><br>
+(click for larger logo)<br><br>
+<h2>Table of contents</h2>
+<a href="./snes_adapter.htm">SNES cartridge to Nintendo Super System adapter</a><br>
+<a href="./logs.htm">Super System/SNES repair logs/resources</a><br>
+<a href="http://www.thingiverse.com/thing:1131170">3D printable APU standoffs (Thingiverse)</a><br>
+<a href="#bios">BIOS version differences</a><br>
+<a href="#cart_pinout">Nintendo Super System Cartridge Pinout</a><br>
+<a href="#resistor">Gray screen (and possibly audio problem) fix</a><br>
+<a href="#ppu2_reset">SD2SNES compatibility mod</a><br>
+<br>
+<br>
+<a name="bios"></a>
+<h2>Nintendo Super System BIOS version differences</h2>
+<h3>v1</h3>
+For free play- you must always press "Restart Game" to add credits.<br>
+When starting a game, it uses all credits.<br>
+"Restart Game" just resets the current game (can't exit to game select menu).<br>
+Doesn't appear to support "skill" mode.<br>
+<h3>v2</h3>
+For free play- with a single cart, just press A to start. With multiple carts, you must press "Restart Game" to add credits.<br>
+When starting a game, it uses all credits.<br>
+"Restart Game" just resets the current game (can't exit to game select menu).<br>
+Supports "skill" mode.<br>
+<h3>v3</h3>
+For free play- with a single cart, just press A to start. With multiple carts, you must press "Restart Game" to add credits.<br>
+When starting a game, it uses only 1 credit (it automatically takes the next credit, if available, when time runs out).<br>
+"Restart Game" exits to the game select menu (you lose the remaining time from that credit).<br>
+Supports "skill" mode.<br>
+<br>
+<br>
+<a name="cart_pinout"></a>
+<h2>Nintendo Super System Cartridge Pinout</h2>
+<img src="./cart_pinout.jpg"><br>
+P_* are Program pins<br>
+I_* are Instruction pins<br>
+S_* are Security PROM pins<br>
+/CART_EN signals the active NSS slot<br>
+VCCB is the NSS +5V (which is always active). VCCA is the +5V for the SNES half, which is switched on by Q1 (2SA1442 PNP BJT) only when the SNES half is active.<br>
+All pins of the 3 slots are connected together except A05, A47, and B10.<br>
+<br>
+<br>
+<a name="resistor"></a>
+<h2>Nintendo Super System Gray Screen (and possible sound problem) Fix</h2>
+If you just want to see what you need to replace, <a href="#resistor_fix">click here</a>.
+<h3>Introduction</h3>
+Due to a design flaw in the Nintendo Super System motherboard, many systems have a problem where the video will be washed out, or sometimes show a completely gray screen... which sometimes gets better, or snaps in and out, after warming up for a long time.  With this problem, you can still hear the game playing, but just can't see it.  This is due to a drop in voltage to the video mixing circuit, which is supposed to run from 12V.  There's a 10 ohm 1/8W resistor in series, which due to large inrush current to the large capacitor, quickly goes out of spec to several tens to 100 ohms.<br>
+<br>
+There is a different, but related problem with audio.  Another 10 ohm 1/8W resistor, with even larger inrush current, due to a larger capacitor... though this one seems less prone to causing problems, since the circuit uses less steady state current (so the voltage drops less across the out of spec resistor).
+<h3>Analysis</h3>
+I wanted to fix the problem, but I wanted to make sure I understood exactly what was happening first.  Most motherboards I've seen, whether they're exhibiting problems or not, have had both of these resistors well outside of the 5% specification.  As the resistor burns, it becomes more resistive, letting less current through, and in turn dissipating less power (P=I^2*R)... typically preventing itself from burning completely open-circuit.  The steady state current of both of these circuits is pretty small, so once the capacitor is charged, the voltage drop across even the out of spec resistor is still fairly low.  The actual voltage of the 12V power supply rail can have an effect on it as well.<br>
+<br>
+I put some higher current handling resistors in place, and took some measurements of the voltage drop across the resistor, both during the inrush to the discharged capacitor, as well as steady state, to determine the current, and power dissipated in the resistor.  The results are surprising.  Below are the measurements... the yellow and blue traces are the voltages on each side of the resistor, and the red trace is the voltage dropped across the resistor (calculate power directly from the red trace with P=V^2/R).<br>
+<br>
+During inrush to the video circuit, the current peaks at around 1A (10 WATTS!), and still above 2W 30ms or so later.<br>
+<img src="./video_inrush1.jpg"><br>
+Zoomed into the initial spike:<br>
+<img src="./video_inrush2.jpg"><br>
+Steady state, less than 50mA (less than 25mW dissipated in the resistor):<br>
+<img src="./video_steady.jpg"><br><br>
+<br>
+The inrush to the audio circuit is very similar (again about 10W), though slightly worse, due to the larger capacitor (above 2W for about 40ms).<br>
+<img src="./audio_inrush1.jpg"><br>
+Zoomed into the initial spike:<br>
+<img src="./audio_inrush2.jpg"><br>
+Steady state, less than 30mA (less than 10mW dissipated in the resistor):<br>
+<img src="./audio_steady.jpg"><br><br>
+<br>
+All resistors have some surge current capability, so going above the rated wattage for a small fraction of time can be tolerated in some cases.  The original resistors are standard 1/8W 0805, similar to the Panasonic ERJ series (dashed line below):<br>
+<img src="./0805_erj_pwr.jpg"><br><br>
+As you can see, they can tolerate 10W for 1ms, or 6W for 10ms.  Unfortunately, this is exceeded in both the video and audio circuits.  This is the reason for the large number of failures.<br>
+<br>
+As a test, I put slightly weaker than standard resistors in place (10 ohm 1/10W 0603 ERJ resistors).  After every power cycle, I noticed the resistance increasing by a little bit... and after about 15 power cycles, the video resistor was approximately 30 ohms, and I began noticing video problems.<br>
+<br>
+<h3>Fix</h3>
+There are several possible fixes, though the one I recommend is simply replacing the original 10 ohm 1/8W 0805 resistor with a 10 ohm 1/2W 0805 Anti-Surge resistor.  These resistors are designed to handle large surge currents, like the ones seen here, without degradation.  Below is a graph of the power handling of the Panasonic ERJP series Anti-Surge resistors:<br>
+<img src="./0805_erjp_pwr.jpg"><br><br>
+Note that the ERJP06 can handle almost 20W for 10ms, and the ERJP6W can handle over 30W for 10ms.  Both of these give you quite a bit of safety margin (I'd recommend the ERJP6W if it's available, since it doesn't cost much more).<br>
+<a href=http://www.digikey.com/product-detail/en/ERJ-P6WJ100V/P16930CT-ND/4964969>http://www.digikey.com/product-detail/en/ERJ-P6WJ100V/P16930CT-ND/4964969</a><br>
+<a href=http://www.digikey.com/product-detail/en/ERJ-P06J100V/P10ADCT-ND/525435>http://www.digikey.com/product-detail/en/ERJ-P06J100V/P10ADCT-ND/525435</a><br>
+Another option is the ERJP08, which is a larger (1206 sized) resistor, but will still fit on the original resistor pads.  I don't have a graph for its surge current capability, but it will be higher than the ERJP06, and in general, a 1206 resistor looks to have approximately double the surge current capability of an 0805 resistor (probably similar to the ERJP6W).<br>
+<a href=http://www.digikey.com/product-detail/en/ERJ-P08J100V/P10ALCT-ND/525555>http://www.digikey.com/product-detail/en/ERJ-P08J100V/P10ALCT-ND/525555</a><br>
+<br>
+<a name="resistor_fix"></a>
+Simply swapping the original 1/8W resistors (R71 and R101) with <a href=http://www.digikey.com/product-detail/en/ERJ-P6WJ100V/P16930CT-ND/4964969>1/2W ERJP Anti-Surge resistors</a> should get your game back up and running, and keep it happy for a long time to come.<br>
+<br>
+<img src="./mods.jpg"><br><br>
+<img src="./video_resistor.jpg"><br><br>
+<img src="./audio_resistor.jpg"><br><br>
+<br>
+<br>
+<a name="ppu2_reset"></a>
+<h2>Nintendo Super System modification for SD2SNES compatibility</h2>
+For the most part, the Nintendo Super System is identical to, and fully compatible with the SNES.  There are a few obvious differences, like the lack of CIC on the motherboard, the lack of expansion port, and lack of controller ports (so there will be no arcade mouse or Super Scope)... but there are a few subtle differences as well.  One is that the /RESET line going to the cartridges is driven directly by the PPU2 on the Super System, while on the SNES, it's driven weakly through a 2.2K resistor (maybe 1K, on some SNES revisions).<br>
+<br>
+This causes a problem with the SD2SNES (and maybe the Super EverDrive), which resets the system to load the menu and games by pulling the /RESET line low for a short period of time. On the SNES, this is fine, because the SD2SNES easily overpowers the weak /RESET output from the PPU2.  On the Super System, both the PPU2 and SD2SNES are fighting each other for control (and apparently the PPU2 wins).<br>
+<img src="./mods.jpg"><br><br>
+To make the Super System compatible with the SD2SNES, you need to CAREFULLY cut the PPU2 /RESET output trace, and install a 2.2K resistor in series. This will make the circuit the same as an SNES motherboard.<br>
+<br>
+In my case, I cut the trace on the bottom of the board, near the via going up to the PPU2 /RESET output pin, and scraped away some of the solder mask on the trace to expose the copper. I then soldered a <a href=http://www.digikey.com/product-detail/en/ERJ-2GEJ222X/P2.2KJCT-ND/146961>2.2K 0402 resistor</a> across the cut trace. The via already had solder in it, and I'd recommend soldering to the via for extra stability (the traces are thin, and probably not very strong).  With the resistor properly soldered in place, everything should function normally, and now compatible with the SD2SNES.<br>
+<img src="./ppu2_trace_cut.jpg"><br><br>
+<img src="./ppu2_resistor.jpg"><br><br>
+</font>
+</body>
