@@ -1,0 +1,19 @@
+VB Controller Chip Pinout (BU3613F)
+
+     Data -	- Unknown
+L Trigger -	- Unknown
+R Trigger -	- Reset (Latch)
+   R Down -	- Clock
+  R Right -	- L Down
+     R Up -	- L Left
+        A -	- Start
+        B -	- Select
+   R Left -	- L Right
+      GND -	- L Up
+
+
+Notes:
+
+All buttons short the pin from the chip to ground
+There are 100 Ohm resistors on Clock, Data, and Latch to the pins on the connector
+The unknown pins may the low battery sensor (pin 19) and the controller signature bit (pin 20) (Those are just guesses, I'll have to test it when I get time)

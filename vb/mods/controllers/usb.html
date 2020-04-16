@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>Project: Virtual Boy</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Project: Virtual Boy - A site dedicated to hacking the Nintendo Virtual Boy">
+<meta name="keywords" content="Nintendo,Virtual,Boy,Hack,Hacking,Mods,Modifications,Repair,Display,Problem,Prototype,gcc,gccvb,C,C++,Emulator,Emulation">
+<link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<div style="width: 960px;" id="outer">
+<div class="red"></div>
+<div style="height: 24px;" id="location"><a href="../../">Project:
+Virtual Boy</a>
+</div>
+<div style="margin-top: 0px; height: 18px;" id="sublocation">&nbsp;
+&nbsp;
+&nbsp;Virtual Boy Lives @ Project: VB</div>
+<div style="width: 745px;" id="right">
+<h1>USB Virtual Boy Controller</h1>
+Here's a how-to for creating a USB VB controller using the kit from <a href="http://www.retrousb.com/">www.retrousb.com</a>.
+This is a really cool and cheap way to use a real VB controller for
+development and emulation (the keyboard just doesn't work well for the
+VB controller). This is a great alternative to making a parallel port
+connection w/ SNESKey.
+<p><img src="USBController/everything.jpg" height="300" width="400"><br>
+Here's everything you need... controller and interface board.</p>
+<p><img src="USBController/backoff.jpg" height="363" width="400"><br>
+Then you need to take the back off... just a few phillips screws.</p>
+<p><img src="USBController/cutwires.jpg" height="336" width="400"><br>
+Then you'll want to cut the cable and remove the sheathing, but don't
+cut it too short yet.</p>
+<p><img src="USBController/diagram.jpg" height="465" width="465"><br>
+Here's a diagram of where to connect the wires.</p>
+<p><img src="USBController/USBwires.jpg" height="304" width="400"><br>
+Here's the USB wires connected to the interface board.</p>
+<p><img src="USBController/wired.jpg" height="300" width="400"><br>
+Here is the board wired to both the USB cable and the VB controller
+cables. Notice the red wire (from the battery) is not needed, so it can
+be cut short.</p>
+<p><img src="USBController/installed.jpg" height="300" width="400"><br>
+Here is the interface board installed in the controller. Putting the
+cable between the original cable clip seems to work well and holds it
+securely.</p>
+<p><img src="USBController/makeroom.jpg" height="321" width="400"><br>
+Next, because there is now a new board in the controller, we need to
+make some room. You'll want to snap off the angled plastic pieces on
+the back of the controller. I used a pair of needlenose pliers, but you
+can use anything that will either cut or break them off.</p>
+<p><img src="USBController/closed.jpg" height="300" width="400"><br>
+Make sure the back will go on and replace the screws that you removed
+earlier.</p>
+<p><img src="USBController/complete.jpg" height="400" width="300"><br>
+And here's the final product :-).</p>
+<p><img src="USBController/wintest.jpg" height="448" width="404"><br>
+When you plug it in, it'll be detected as a joystick. Go into the
+joystick test and ensure everything works properly.</p>
+<p>Now... it's great that it's detected as a joystick, too bad
+the VB emulators don't currently support joysticks. So, to convert the
+joystick inputs to keyboard inputs, I use JoyToKey. You can download
+the software <a href="http://www.electracode.com/4/joy2key/JoyToKey%20English%20Version.htm">HERE</a>.</p>
+</div>
+<div style="width: 200px;" id="left">
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Tech</div>
+<div class="navcontent">
+Repair
+<ul>
+<li><a href="../../dissect.html">Dissecting the
+Virtual Boy</a></li>
+<li><a href="../../displayfix.html">Fixing Glitchy
+Displays</a></li>
+</ul>
+Development
+<ul>
+<li><a href="../../techinfo.html">Virtual Boy
+Technical Info</a></li>
+<li><a href="../../programming.html">Programming /
+Emulation</a></li>
+<li><a href="../../progcart.html">Reprogrammable
+Cart</a></li>
+<li><a href="../../dumper.html">Cartridge Dumper</a></li>
+<li><a href="../../debugger.html">VUE-Debugger</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Modifications</div>
+<div class="navcontent">Useful Mods
+<ul>
+<li><a href="../../tvvga.html">TV/VGA Output</a></li>
+<li><a href="../../linkcable.html">Link Cable</a></li>
+<li><a href="../../rechargepack.html">Rechargable
+Battery
+Pack</a></li>
+<li><a href="../../controllers.html">Controller
+Modifications</a></li>
+</ul>
+Fun Mods
+<ul>
+<li><a href="../../rumble.html">Rumble Pack</a></li>
+<li><a href="../../painting.html">Painting the VB</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Other Virtual Boy Stuff</div>
+<div class="navcontent">
+<ul>
+</ul>
+Virtual Boy Prototypes
+<ul>
+<li><a href="../../proto_faceball.html">Faceball</a></li>
+<li><a href="../../proto_vbowl.html">Virtual
+Bowling</a></li>
+</ul>
+Article Scans
+<ul>
+<li><a href="../../scan_np.html">Nintendo
+Power</a></li>
+<li><a href="../../scan_other.html">Others</a></li>
+</ul>
+Store Displays
+<ul>
+<li><a href="../../disp_medium_us.html">Medium
+US Display</a></li>
+<li><a href="../../disp_small_us.html">Small
+US Display</a></li>
+<li><a href="../../disp_small_jp.html">Small
+JP Display</a></li>
+</ul>
+Misc
+<ul>
+<li><a href="../../cheats.html">Cheats</a></li>
+<li><a href="../../endings.html">Game Endings</a></li>
+<li><a href="../../wants.html">Stuff I want for
+the VB</a></li>
+<li><a href="../../coolstuff.html">Cool VB Stuff</a></li>
+<li><a href="../../links.html">Links</a></li>
+</ul>
+Contact
+<ul>
+<li><a href="http://chat.vr32.de" target="_blank">Virtual
+Boy Chat</a></li>
+<li><a href="../../email.jpg">Email
+Me</a></li>
+</ul>
+<ul>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Search Project: VB</div>
+<div class="navcontent">
+<form method="get" name="tipue" action="search.html">
+<table class="form_table" cellpadding="0" cellspacing="2">
+<tbody>
+<tr>
+<td class="form_td_left">
+<input name="d" class="field" type="text"></td>
+<td class="form_td_right">
+<input value="Search" class="button" type="submit"></td>
+</tr>
+</tbody>
+</table>
+</form>
+<script type="text/javascript" language="javascript">
+var sc_project=1721223; var sc_invisible=0; var sc_partition=16; var sc_security="28318578"; </script>
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script>
+<noscript><img
+src="http://c17.statcounter.com/counter.php?sc_project=1721223&java=0&security=28318578&invisible=0"
+border="0"> </noscript>
+</div>
+</div>
+</div>
+</div>
+</body></html>
