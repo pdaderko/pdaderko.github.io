@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>Project: Virtual Boy</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Project: Virtual Boy - A site dedicated to hacking the Nintendo Virtual Boy">
+<meta name="keywords" content="Nintendo,Virtual,Boy,Hack,Hacking,Mods,Modifications,Repair,Display,Problem,Prototype,gcc,gccvb,C,C++,Emulator,Emulation">
+<link rel="stylesheet" type="text/css" href="../../style.css"></head>
+<body>
+<div style="width: 960px;" id="outer">
+<div class="red"></div>
+<div style="height: 24px;" id="location"><a href="../../">Project:
+Virtual Boy</a>
+</div>
+<div style="margin-top: 0px; height: 18px;" id="sublocation">&nbsp;
+&nbsp;
+&nbsp;Virtual Boy Lives @ Project: VB</div>
+<div style="width: 745px;" id="right">
+<h1>Reprogrammable Flash Cartridge</h1>
+<img src="flash/InVB.jpg" height="267" width="490">
+<p>Here is my reprogrammable Flash cart, which is based on my
+EPROM cart, except as you can tell, it is a lot smaller, and to
+reprogram, the chips are erased inside the device that programs them,
+so it is a much faster and easier process. Although this cart could
+have been just as big as my EPROM one, the flash chips I bought are
+PLCC, which is a lot smaller, but has the same capabilities as the DIP.
+The biggest problem with using flash chips is that the largest 32 pin
+flash chip is a 4 megabit chip, so when using 2 of them, you get a 1
+megabyte cart, which is fine for most games, but there are some 2
+megabyte games out there (although they are fairly common games).</p>
+<p>&nbsp;</p>
+<p>Parts List:</p>
+<p><img src="flash/doneopenfront.jpg" height="384" width="406"></p>
+<p>You need - Perfboard, two 32pin PLCC sockets, wrapping wire,
+and an original VB cart (I used teleroboxer)</p>
+<p>&nbsp;</p>
+<p><img src="flash/willem.jpg" height="239" width="371"></p>
+<p><img src="flash/plccadptr.jpg" height="166" width="215"></p>
+<p>EPROM programmer, I used the Willem EPROM programmer because
+it supported my chips and more devices and is probably the cheapest one
+available although slower than my EPROMER. You will also need a PLCC
+adapter to program these chips. Both are available from <a href="http://www.willem.org/" target="_blank">www.willem.org</a>.
+</p>
+<p>&nbsp;</p>
+<p><img src="flash/chip.jpg" height="134" width="194"></p>
+<p>32 pin PLCC chip (mine are 90ns ST M29F040B - 4mbit chips)</p>
+<p>And you will also need: a soldering iron, and solder -
+available at Radio Shack</p>
+<p>&nbsp;</p>
+<p>Building Instructions:</p>
+<p><img src="carttool.jpg" height="336" width="448"></p>
+<p>First, to open up a cartridge you need a tool, either you can
+buy one that fits the cart, or what I did was take an old flat head
+screwdriver that was about the width of the hole, then notched out the
+center wide enough to grab the center of the screw.</p>
+<p>&nbsp;</p>
+<p><img src="eprom/apart.jpg" height="336" width="448"></p>
+<p>Then you need to open up the cart (which cart you use is up to
+you, but I picked Teleroboxer because it has battery backed save games
+and is fairly cheap)</p>
+<p>&nbsp;</p>
+<p><img src="eprom/prychip.jpg" height="336" width="448"></p>
+<p>After opening, you need to remove the chip which I did by
+clamping down the board, taking a chisel to get under the edge of a
+corner, then use a soldering iron and to melt the solder and pry up
+with the chisel (the chisel works the best because even a small flat
+head screwdriver had a hard time getting under the corner of the chip)</p>
+<p>&nbsp;</p>
+<p><img src="eprom/testing.jpg" height="384" width="512"></p>
+<p>Then you should test to make sure there are no shorts where
+you desoldered the chip, and if you have to, use a pick to scratch away
+some excess solder</p>
+<p>&nbsp;</p>
+<p>Through Hole Cart:</p>
+<p><img src="flash/cartcase.jpg" height="205" width="554"></p>
+<p><img src="flash/wires.jpg" height="141" width="324"></p>
+<p>Then you are going to need some perfboard and cut it to fit
+the cart, then cut the cart casing so the chip socket fits out the
+bottom - I used a dremel to cut the holes, and also to thin the casing
+so I have more room for the wires with less pressure on them and less
+bulge in the casing. Then start jumpering the wires that are in common
+with both chips (VCC, address lines, GND, /WE, etc)</p>
+<p>&nbsp;</p>
+<p><img src="wiretool.jpg" height="237" width="315"></p>
+<p>To cut the wires, the fastest way I've found is to decide how
+long you want the wires, then make a tool to make the wires that
+length. What I did was found a block of wood the size I wanted, drilled
+a hole down the middle of it, stuck a screw through it. Then attach it
+to a drill and it'll quickly make a new spool the length that you want,
+then just take a knife and cut straight across and all the wires are
+relatively the same size.</p>
+<p>&nbsp;</p>
+<p>You need to then read <a href="flash/Flashpins.txt" target="_blank">this
+file</a> to find out which wires go where, and <a href="flash/PLCCpinout.txt" target="_blank">this
+file</a> for the pinout of the throughhole PLCC socket.</p>
+<p>&nbsp;</p>
+<p><img src="flash/doneopenback.jpg" height="404" width="436"></p>
+<p>Then you have to solder the wires to each pin individually and
+connect them to the correct pins. Although that looks like a huge mess,
+as long as you work on it one pin at a time, it isn't really too
+difficult, just time consuming.</p>
+<p>&nbsp;</p>
+<p><img src="flash/doneback.jpg" height="429" width="496"></p>
+<p>Then after you get the wiers connected, carefully put the the
+two boards into the cart case and screw it together - this is what it
+looks like.</p>
+<p>&nbsp;</p>
+<p><img src="flash/donefront.jpg" height="402" width="454"></p>
+<p>Here's a pic from the front. Now you're ready to program the
+chips, put them in, and PLAY GAMES!</p>
+<p>&nbsp;</p>
+<p><img src="flash/InVB.jpg" height="267" width="490"></p>
+<p>Here it is from the bottom. As you can see, it is a lot
+smaller than the eprom cart and looks very nice having no wires exposed.</p>
+<p>Surface Mount Cart:</p>
+<p>Here's just a few pics of my latest flash cart which uses
+surface mount sockets, which are a lot lower profile and don't stick
+out the back any. The wiring of the cart is the same as the through
+hole, but there's just a few differences that I'll note under the
+pictures.</p>
+<p>&nbsp;</p>
+<p><img src="flash/newcartcase.jpg" height="228" width="581"></p>
+<p>First, you want to start by cutting holes the size of the
+sockets starting from the back wall of the plastic cart (I used a small
+drill like bit for the dremel to cut the big part, then used an xacto
+knife to finish the edges). Then you will want to give yourself some
+extra room inside the cart, so you should trim away some of the inside
+of the cart (I used a dremel).</p>
+<p>&nbsp;</p>
+<p><img src="flash/newcartfront.jpg" height="324" width="371"></p>
+<p><img src="flash/newcartback.jpg" height="331" width="390"></p>
+<p>Here you see the wiring of the chip... same as the other cart,
+except instead of having large through holes, you have smaller surface
+mount pins (which aren't really THAT hard to solder to). Also notice
+that I ran every wire to the edge instead of connecting from chip to
+chip, then from one chip to the edge. That was because with the surface
+mount chips, there is a lot less room for wires by the chip, so it
+works out better to run each individually to the edge.</p>
+<p>&nbsp;</p>
+<p><img src="flash/newcartdone.jpg" height="400" width="467"></p>
+<p>And the finished product, a completely flush socketed flash
+cart. The other version does have it's advantages though... although it
+doesn't look as nice, it's easier to swap chips because you can leave
+the cart in and only remove the chip, where this version you have to
+pull the cart out slightly to remove the chip. But it may be possible
+to move the hole back as far as possible and have access to the chip.
+WOOHOO! Now I can do some quick programming for the link cable with TWO
+flash carts!</p>
+<p>&nbsp;</p>
+<p>Programming:</p>
+<p><img src="flash/willemsoft.jpg" height="360" width="443"></p>
+<p>To program, you must first make sure the chips are blank
+(click erase to be sure, takes about 7 seconds), then select the chip
+type and rom you want to program. Because we have to use two chips, you
+must program the High and Low Bytes separately. I believe that you can
+do it in this program, but I always split the file first, then program
+the whole file. You must also fill the whole chip up with repeats of
+the data. After you select the rom, you can put the chip in. Then you
+can select program chip. It will take about 5 minutes to program a full
+512k chip. After the first chip is done, you can put the second chip in
+and do the same process with the other half of the file. Then put the
+chips into the cart and you're done!<font size="-1"> </font></p>
+</div>
+<div style="width: 200px;" id="left">
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Tech</div>
+<div class="navcontent">
+Repair
+<ul>
+<li><a href="../../dissect.html">Dissecting the
+Virtual Boy</a></li>
+<li><a href="../../displayfix.html">Fixing Glitchy
+Displays</a></li>
+</ul>
+Development
+<ul>
+<li><a href="../../techinfo.html">Virtual Boy
+Technical Info</a></li>
+<li><a href="../../programming.html">Programming /
+Emulation</a></li>
+<li><a href="../../progcart.html">Reprogrammable
+Cart</a></li>
+<li><a href="../../dumper.html">Cartridge Dumper</a></li>
+<li><a href="../../debugger.html">VUE-Debugger</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Modifications</div>
+<div class="navcontent">Useful Mods
+<ul>
+<li><a href="../../tvvga.html">TV/VGA Output</a></li>
+<li><a href="../../linkcable.html">Link Cable</a></li>
+<li><a href="../../rechargepack.html">Rechargable
+Battery
+Pack</a></li>
+<li><a href="../../controllers.html">Controller
+Modifications</a></li>
+</ul>
+Fun Mods
+<ul>
+<li><a href="../../rumble.html">Rumble Pack</a></li>
+<li><a href="../../painting.html">Painting the VB</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Other Virtual Boy Stuff</div>
+<div class="navcontent">
+<ul>
+</ul>
+Virtual Boy Prototypes
+<ul>
+<li><a href="../../proto_faceball.html">Faceball</a></li>
+<li><a href="../../proto_vbowl.html">Virtual
+Bowling</a></li>
+</ul>
+Article Scans
+<ul>
+<li><a href="../../scan_np.html">Nintendo
+Power</a></li>
+<li><a href="../../scan_other.html">Others</a></li>
+</ul>
+Store Displays
+<ul>
+<li><a href="../../disp_medium_us.html">Medium
+US Display</a></li>
+<li><a href="../../disp_small_us.html">Small
+US Display</a></li>
+<li><a href="../../disp_small_jp.html">Small
+JP Display</a></li>
+</ul>
+Misc
+<ul>
+<li><a href="../../cheats.html">Cheats</a></li>
+<li><a href="../../endings.html">Game Endings</a></li>
+<li><a href="../../wants.html">Stuff I want for
+the VB</a></li>
+<li><a href="../../coolstuff.html">Cool VB Stuff</a></li>
+<li><a href="../../links.html">Links</a></li>
+</ul>
+Contact
+<ul>
+<li><a href="http://chat.vr32.de" target="_blank">Virtual
+Boy Chat</a></li>
+<li><a href="../../email.jpg">Email
+Me</a></li>
+</ul>
+<ul>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Search Project: VB</div>
+<div class="navcontent">
+<form method="get" name="tipue" action="search.html">
+<table class="form_table" cellpadding="0" cellspacing="2">
+<tbody>
+<tr>
+<td class="form_td_left">
+<input name="d" class="field" type="text"></td>
+<td class="form_td_right">
+<input value="Search" class="button" type="submit"></td>
+</tr>
+</tbody>
+</table>
+</form>
+<script type="text/javascript" language="javascript">
+var sc_project=1721223; var sc_invisible=0; var sc_partition=16; var sc_security="28318578"; </script>
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script>
+<noscript><img
+src="http://c17.statcounter.com/counter.php?sc_project=1721223&java=0&security=28318578&invisible=0"
+border="0"> </noscript>
+</div>
+</div>
+</div>
+</div>
+</body></html>

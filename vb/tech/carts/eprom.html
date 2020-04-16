@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>Project: Virtual Boy</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Project: Virtual Boy - A site dedicated to hacking the Nintendo Virtual Boy">
+<meta name="keywords" content="Nintendo,Virtual,Boy,Hack,Hacking,Mods,Modifications,Repair,Display,Problem,Prototype,gcc,gccvb,C,C++,Emulator,Emulation">
+<link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<div style="width: 960px;" id="outer">
+<div class="red"></div>
+<div style="height: 24px;" id="location"><a href="../../">Project:
+Virtual Boy</a>
+</div>
+<div style="margin-top: 0px; height: 18px;" id="sublocation">&nbsp;
+&nbsp;
+&nbsp;Virtual Boy Lives @ Project: VB</div>
+<div style="width: 745px;" id="right">
+<h1>Reprogrammable EPROM Cartridge</h1>
+<img src="eprom/backsystem.jpg" height="368" width="500">
+<p>Here's a reprogrammable EPROM cartridge that I built from
+plans by David Tucker - <a href="http://www.goliathindustries.com/vb/VBCart.html" target="_blank">His instructions</a>. It works just
+like a regular cartridge except you decide what goes on it. I have
+tried many different games on it, they all seem to work, including my
+homemade Simon game.</p>
+<p>&nbsp;</p>
+<p>Parts List:</p>
+<p><img src="eprom/perfboard.jpg" height="263" width="358"></p>
+<p>Perfboard and two 32pin (or more - I got 40 pin because
+they're easier to find) sockets, and jumpers (optional)</p>
+<p>&nbsp;</p>
+<p><img src="eprom/apart.jpg" height="336" width="448"></p>
+<p>Original VB cart, I used Teleroboxer because it is cheap and
+has battery backed save games</p>
+<p>&nbsp;</p>
+<p><img src="eprom/programmer.jpg" height="313" width="481"></p>
+<p>Eprom programmer, I used an EPROMER5 from www.ustr.net . But
+the cable is junk, so buy a real one (wouldn't write anything correctly
+for me)</p>
+<p>&nbsp;</p>
+<p><img src="eprom/chipsocket.jpg" height="273" width="437"></p>
+<p>32 pin EPROMs (27C801's) and ZIF sockets (optional, but easier
+than prying out chips)</p>
+<p>&nbsp;</p>
+<p><img src="eprom/eraseropen.jpg" height="152" width="499"></p>
+<p>An EPROM UV eraser (mine is a Datarase II) or you can leave
+the chips in the sun for a long time or make your own</p>
+<p>&nbsp;</p>
+<p>And you will also need: A spool of wrapping wire, a soldering
+iron, and solder - all available at Radio Shack</p>
+<p>&nbsp;</p>
+<p>Building Instructions:</p>
+<p><img src="carttool.jpg" height="336" width="448"></p>
+<p>First, to open up a cartridge you need a tool, either you can
+buy one that fits the cart, or what I did was take an old flat head
+screwdriver that was about the width of the hole, then notched out the
+center wide enough to grab the center of the screw.</p>
+<p>&nbsp;</p>
+<p><img src="eprom/apart.jpg" height="336" width="448"></p>
+<p>Then you need to open up the cart (which cart you use is up to
+you, but I picked Teleroboxer because it has battery backed save games
+and is fairly cheap)</p>
+<p>&nbsp;</p>
+<p><img src="eprom/prychip.jpg" height="336" width="448"></p>
+<p>After opening, you need to remove the chip which I did by
+clamping down the board, taking a chisel to get under the edge of a
+corner, then use a soldering iron and to melt the solder and pry up
+with the chisel (the chisel works the best because even a small flat
+head screwdriver had a hard time getting under the corner of the chip)</p>
+<p>&nbsp;</p>
+<p><img src="eprom/testing.jpg" height="384" width="512"></p>
+<p>Then you should test to make sure there are no shorts where
+you desoldered the chip, and if you have to, use a pick to scratch away
+some excess solder</p>
+<p>&nbsp;</p>
+<p><img src="eprom/perfboard.jpg" height="263" width="358"></p>
+<p>Then you are going to need some perfboard and IC sockets (at
+least 32 pin, but I used 40 pin because they're easier to find), then
+cut it to the approximate shape that you want it. You can put the chips
+just about any way you can think of, but I put them side by side so it
+doesn't stick out much in the back, but you can make it as the VB Cart,
+but about twice as long. I will get to the jumpers in the middle later.
+Remember, we have not soldered anything yet, those are just sitting in
+the holes.</p>
+<p>&nbsp;</p>
+<p><img src="eprom/pieces.jpg" height="198" width="387"></p>
+<p>Then you're going to want to test the fit, make any
+notches/holes to fit better, and try actually sticking it into the VB
+(do it now, because it will be harder to modify later)</p>
+<p>&nbsp;</p>
+<p><img src="wiretool.jpg" height="237" width="315"></p>
+<p>To cut the wires, the fastest way I've found is to decide how
+long you want the wires, then make a tool to make the wires that
+length. What I did was found a block of wood the size I wanted, drilled
+a hole down the middle of it, stuck a screw through it. Then attach it
+to a drill and it'll quickly make a new spool the length that you want,
+then just take a knife and cut straight across and all the wires are
+relatively the same size.</p>
+<p>&nbsp;</p>
+<p>You need to then read <a href="eprom/EPROMpins.txt" target="_blank">this
+file</a> to find out which wires go where</p>
+<p>&nbsp;</p>
+<p><img src="eprom/begboardwire.jpg" height="357" width="383"></p>
+<p>Next, you want to put the socket in the holes, and slide the
+wires that are duplicate with the other side in each hole (saves
+running two wires to the cart edge which is very crowded), then run
+them to the other side and put them in the same holes. Then you will
+want to solder them in (you may want to solder the extra pins in first
+if you got a 40 pin socket so it stays in place when you move it
+around) </p>
+<p>&nbsp;</p>
+<p><img src="eprom/cartopen.jpg" height="332" width="290"></p>
+<p>This is after soldering in the duplicate wires to the front</p>
+<p>&nbsp;</p>
+<p><img src="eprom/brdwireback.jpg" height="360" width="452"></p>
+<p>Then you will need to solder the wires to the back of the
+board. The jumpers are so you can use a flash EPROM chip instead of
+standard UV erasable EPROM.</p>
+<p>&nbsp;</p>
+<p><img src="eprom/backback.jpg" height="278" width="354"></p>
+<p>Next, you need to solder the wires from the EPROM board to the
+VB Cart board. The best way I found to do this was to clamp the EPROM
+board, and clamp a 2x4 to the bench and use it to support the VB Cart
+board while you solder all the wires (be careful, they are very small
+and brittle)</p>
+<p>&nbsp;</p>
+<p><img src="eprom/donebckcart.jpg" height="253" width="346"></p>
+<p>Then after you get the wiers connected, carefully put the the
+two boards into the cart case</p>
+<p>&nbsp;</p>
+<p><img src="eprom/cart.jpg" height="328" width="427"></p>
+<p>Then you're ready to put the ZIF sockets in, program the
+chips, put them in, and PLAY GAMES!</p>
+<p>&nbsp;</p>
+<p><img src="eprom/frontsystem.jpg" height="389" width="515"></p>
+<p>Here it is from the top, as you can see, it doesn't stick out
+too far in the back, and doesn't cause as much bend in the cart</p>
+<p>&nbsp;</p>
+<p>Programming:</p>
+<p><img src="eprom/program.jpg" height="382" width="552"></p>
+<p>To program, you must first make sure the chips are blank (mine
+take about 15mins in the eraser), then select the chip type and rom you
+want to program. Because we have to use two chips, you must program the
+High and Low Bytes separately. You can do it in this program, but there
+are many bugs in it that it is better to split the file first, then
+program the whole file. You must also fill the whole chip up with
+repeats of the data. After you select the rom, you can put the chip in
+and select Blank Chk to make sure it is completly erased. Then you can
+select program. It will take about two minutes to program a full 1MB
+chip, then you should verify it. After the first chip is done, you can
+put the second chip in and do the same process with the other half of
+the file. Then put the chips into the cart and you're done! </p>
+<p>&nbsp;</p>
+<p><img src="../screenshots/EPTB.jpg" height="245" width="414"></p>
+<p>My first screenshot from my EPROM - Teleroboxer</p>
+<p>&nbsp;</p>
+<p><img src="../screenshots/EPSimon.jpg" height="290" width="476"></p>
+<p>Screenshot of my homebrewn game Simon</p>
+</div>
+<div style="width: 200px;" id="left">
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Tech</div>
+<div class="navcontent">
+Repair
+<ul>
+<li><a href="../../dissect.html">Dissecting the
+Virtual Boy</a></li>
+<li><a href="../../displayfix.html">Fixing Glitchy
+Displays</a></li>
+</ul>
+Development
+<ul>
+<li><a href="../../techinfo.html">Virtual Boy
+Technical Info</a></li>
+<li><a href="../../programming.html">Programming /
+Emulation</a></li>
+<li><a href="../../progcart.html">Reprogrammable
+Cart</a></li>
+<li><a href="../../dumper.html">Cartridge Dumper</a></li>
+<li><a href="../../debugger.html">VUE-Debugger</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Modifications</div>
+<div class="navcontent">Useful Mods
+<ul>
+<li><a href="../../tvvga.html">TV/VGA Output</a></li>
+<li><a href="../../linkcable.html">Link Cable</a></li>
+<li><a href="../../rechargepack.html">Rechargable
+Battery
+Pack</a></li>
+<li><a href="../../controllers.html">Controller
+Modifications</a></li>
+</ul>
+Fun Mods
+<ul>
+<li><a href="../../rumble.html">Rumble Pack</a></li>
+<li><a href="../../painting.html">Painting the VB</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Other Virtual Boy Stuff</div>
+<div class="navcontent">
+<ul>
+</ul>
+Virtual Boy Prototypes
+<ul>
+<li><a href="../../proto_faceball.html">Faceball</a></li>
+<li><a href="../../proto_vbowl.html">Virtual
+Bowling</a></li>
+</ul>
+Article Scans
+<ul>
+<li><a href="../../scan_np.html">Nintendo
+Power</a></li>
+<li><a href="../../scan_other.html">Others</a></li>
+</ul>
+Store Displays
+<ul>
+<li><a href="../../disp_medium_us.html">Medium
+US Display</a></li>
+<li><a href="../../disp_small_us.html">Small
+US Display</a></li>
+<li><a href="../../disp_small_jp.html">Small
+JP Display</a></li>
+</ul>
+Misc
+<ul>
+<li><a href="../../cheats.html">Cheats</a></li>
+<li><a href="../../endings.html">Game Endings</a></li>
+<li><a href="../../wants.html">Stuff I want for
+the VB</a></li>
+<li><a href="../../coolstuff.html">Cool VB Stuff</a></li>
+<li><a href="../../links.html">Links</a></li>
+</ul>
+Contact
+<ul>
+<li><a href="http://chat.vr32.de" target="_blank">Virtual
+Boy Chat</a></li>
+<li><a href="../../email.jpg">Email
+Me</a></li>
+</ul>
+<ul>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Search Project: VB</div>
+<div class="navcontent">
+<form method="get" name="tipue" action="search.html">
+<table class="form_table" cellpadding="0" cellspacing="2">
+<tbody>
+<tr>
+<td class="form_td_left">
+<input name="d" class="field" type="text"></td>
+<td class="form_td_right">
+<input value="Search" class="button" type="submit"></td>
+</tr>
+</tbody>
+</table>
+</form>
+<script type="text/javascript" language="javascript">
+var sc_project=1721223; var sc_invisible=0; var sc_partition=16; var sc_security="28318578"; </script>
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script>
+<noscript><img
+src="http://c17.statcounter.com/counter.php?sc_project=1721223&java=0&security=28318578&invisible=0"
+border="0"> </noscript>
+</div>
+</div>
+</div>
+</div>
+</body></html>

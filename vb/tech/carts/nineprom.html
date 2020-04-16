@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>Project: Virtual Boy</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Project: Virtual Boy - A site dedicated to hacking the Nintendo Virtual Boy">
+<meta name="keywords" content="Nintendo,Virtual,Boy,Hack,Hacking,Mods,Modifications,Repair,Display,Problem,Prototype,gcc,gccvb,C,C++,Emulator,Emulation">
+<link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<div style="width: 960px;" id="outer">
+<div class="red"></div>
+<div style="height: 24px;" id="location"><a href="../../">Project:
+Virtual Boy</a>
+</div>
+<div style="margin-top: 0px; height: 18px;" id="sublocation">&nbsp;
+&nbsp;
+&nbsp;Virtual Boy Lives @ Project: VB</div>
+<div style="width: 745px;" id="right">
+<h1>Official Nintendo EPROM Cartridge</h1>
+Here's an official reprogrammable EPROM cartridge from Nintendo. These
+are the carts that were used during development of games, and maybe
+even used to test some unreleased prototypes :-). I'll have to dump the
+SRAM on it some day to look for saved data. I've been using this myself
+for testing of games over 8mbit, since this cart is much less fragile
+than the EPROM cart that I built. I still prefer the flash cart over
+this though.
+<p>&nbsp;</p>
+<p><img src="nineprom/front.jpg" height="427" width="640"></p>
+<p>Front of EPROM cart.</p>
+<p>&nbsp;</p>
+<p><img src="nineprom/back.jpg" height="406" width="640"></p>
+<p>Back of EPROM cart.</p>
+<p>&nbsp;</p>
+<p>Specs:</p>
+<p>Cart takes either 4 or 8 mbit EPROMs, and has 256kbit of SRAM.
+The standard cart only has 64kbit, so I assume this was used to prepare
+for future games that needed the extra SRAM.</p>
+<p>4 dip switches are installed. These select which EPROM size is
+used, and whether the SRAM is enabled or disabled. DIPs are on when
+switch is up.</p>
+<p>DIP 1 connects to pin 1 on the EPROM from the top pin, and pin
+16 of the edge from the bottom pin.</p>
+<p>DIP 2 connects to the top pin of DIP 1 from the top pin, and
+an unused header for capacitor C7 (DIP is useless).</p>
+<p>DIP 3 connects to pin 20 on the SRAM from the top pin, and pin
+6 of the edge from the bottom pin. This pin is also pulled up with a
+10kohm resistor.</p>
+<p>DIP 4 is not connected on either pin (DIP is useless).</p>
+<table bgcolor="#000000" border="1" bordercolor="#000000" width="40%">
+<tbody>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="40%">
+<div align="center"></div>
+</td>
+<td width="15%">
+<div align="center">DIP 1</div>
+</td>
+<td width="15%">
+<div align="center">DIP 2</div>
+</td>
+<td width="15%">
+<div align="center">DIP 3</div>
+</td>
+<td width="15%">
+<div align="center">DIP 4</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="40%">
+<div align="center">4mbit EPROMs w/ no SRAM</div>
+</td>
+<td width="15%">
+<div align="center">OFF</div>
+</td>
+<td width="15%">
+<div align="center">Don't Care</div>
+</td>
+<td width="15%">
+<div align="center">OFF</div>
+</td>
+<td width="15%">
+<div align="center">Don't Care</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="40%">
+<div align="center">4mbit EPROMs w/ SRAM</div>
+</td>
+<td width="15%">
+<div align="center">OFF</div>
+</td>
+<td width="15%">
+<div align="center">Don't Care</div>
+</td>
+<td width="15%">
+<div align="center">ON</div>
+</td>
+<td width="15%">
+<div align="center">Don't Care</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="40%">
+<div align="center">8mbit EPROMs w/ no SRAM</div>
+</td>
+<td width="15%">
+<div align="center">ON</div>
+</td>
+<td width="15%">
+<div align="center">Don't Care</div>
+</td>
+<td width="15%">
+<div align="center">OFF</div>
+</td>
+<td width="15%">
+<div align="center">Don't Care</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="40%">
+<div align="center">8mbit EPROMs w/ SRAM</div>
+</td>
+<td width="15%">
+<div align="center">ON</div>
+</td>
+<td width="15%">
+<div align="center">Don't Care</div>
+</td>
+<td width="15%">
+<div align="center">ON</div>
+</td>
+<td width="15%">
+<div align="center">Don't Care</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="width: 200px;" id="left">
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Tech</div>
+<div class="navcontent">
+Repair
+<ul>
+<li><a href="../../dissect.html">Dissecting the
+Virtual Boy</a></li>
+<li><a href="../../displayfix.html">Fixing Glitchy
+Displays</a></li>
+</ul>
+Development
+<ul>
+<li><a href="../../techinfo.html">Virtual Boy
+Technical Info</a></li>
+<li><a href="../../programming.html">Programming /
+Emulation</a></li>
+<li><a href="../../progcart.html">Reprogrammable
+Cart</a></li>
+<li><a href="../../dumper.html">Cartridge Dumper</a></li>
+<li><a href="../../debugger.html">VUE-Debugger</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Modifications</div>
+<div class="navcontent">Useful Mods
+<ul>
+<li><a href="../../tvvga.html">TV/VGA Output</a></li>
+<li><a href="../../linkcable.html">Link Cable</a></li>
+<li><a href="../../rechargepack.html">Rechargable
+Battery
+Pack</a></li>
+<li><a href="../../controllers.html">Controller
+Modifications</a></li>
+</ul>
+Fun Mods
+<ul>
+<li><a href="../../rumble.html">Rumble Pack</a></li>
+<li><a href="../../painting.html">Painting the VB</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Other Virtual Boy Stuff</div>
+<div class="navcontent">
+<ul>
+</ul>
+Virtual Boy Prototypes
+<ul>
+<li><a href="../../proto_faceball.html">Faceball</a></li>
+<li><a href="../../proto_vbowl.html">Virtual
+Bowling</a></li>
+</ul>
+Article Scans
+<ul>
+<li><a href="../../scan_np.html">Nintendo
+Power</a></li>
+<li><a href="../../scan_other.html">Others</a></li>
+</ul>
+Store Displays
+<ul>
+<li><a href="../../disp_medium_us.html">Medium
+US Display</a></li>
+<li><a href="../../disp_small_us.html">Small
+US Display</a></li>
+<li><a href="../../disp_small_jp.html">Small
+JP Display</a></li>
+</ul>
+Misc
+<ul>
+<li><a href="../../cheats.html">Cheats</a></li>
+<li><a href="../../endings.html">Game Endings</a></li>
+<li><a href="../../wants.html">Stuff I want for
+the VB</a></li>
+<li><a href="../../coolstuff.html">Cool VB Stuff</a></li>
+<li><a href="../../links.html">Links</a></li>
+</ul>
+Contact
+<ul>
+<li><a href="http://chat.vr32.de" target="_blank">Virtual
+Boy Chat</a></li>
+<li><a href="../../email.jpg">Email
+Me</a></li>
+</ul>
+<ul>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Search Project: VB</div>
+<div class="navcontent">
+<form method="get" name="tipue" action="search.html">
+<table class="form_table" cellpadding="0" cellspacing="2">
+<tbody>
+<tr>
+<td class="form_td_left">
+<input name="d" class="field" type="text"></td>
+<td class="form_td_right">
+<input value="Search" class="button" type="submit"></td>
+</tr>
+</tbody>
+</table>
+</form>
+<script type="text/javascript" language="javascript">
+var sc_project=1721223; var sc_invisible=0; var sc_partition=16; var sc_security="28318578"; </script>
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script>
+<noscript><img
+src="http://c17.statcounter.com/counter.php?sc_project=1721223&java=0&security=28318578&invisible=0"
+border="0"> </noscript>
+</div>
+</div>
+</div>
+</div>
+</body></html>
