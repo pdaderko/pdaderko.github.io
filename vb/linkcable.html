@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>Project: Virtual Boy</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Project: Virtual Boy - A site dedicated to hacking the Nintendo Virtual Boy">
+<meta name="keywords" content="Nintendo,Virtual,Boy,Hack,Hacking,Mods,Modifications,Repair,Display,Problem,Prototype,gcc,gccvb,C,C++,Emulator,Emulation">
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div style="width: 960px;" id="outer">
+<div class="red"></div>
+<div style="height: 24px;" id="location"><a href="./">Project:
+Virtual Boy</a>
+</div>
+<div style="margin-top: 0px; height: 18px;" id="sublocation">&nbsp;
+&nbsp;
+&nbsp;Virtual Boy Lives @ Project: VB</div>
+<div style="width: 745px;" id="right">
+<h1>Link Cable</h1>
+<p>Setting up the Hardware:</p>
+<p>I modified my link port by removing the proprietary connector
+and connecting up a standard RJ45 connector over Cat5 cable. Here's a
+short how-to for those interested in this mod.</p>
+<p><img src="mods/link/1.jpg" height="362" width="430"></p>
+<p>The needed pieces - Cat5 wire, RJ45 connector, the
+controller/link board.</p>
+<p>&nbsp;</p>
+<p><img src="mods/link/2.jpg" height="385" width="512"></p>
+<p>Then you want to separate the link from the controller port -
+I used a Dremel and cut down the middle - I haven't gotten a better way
+to do this yet, but when you cut the link connector off, you also cut
+off the only screw hole (the controller side is only a fitting hole,
+there is no screw there), so the board doesn't fit in quite as snug as
+it did when it was screwed in.</p>
+<p>&nbsp;</p>
+<p><img src="mods/link/3.jpg" height="346" width="474"></p>
+<p>Then you need to get the link port off - I stuck a flathead
+screwdriver in between the board and the connector, then used a
+soldering iron and heated the pins while prying with the screwdriver</p>
+<p>&nbsp;</p>
+<p><img src="mods/link/4.jpg" height="414" width="606"></p>
+<p>Then you need to strip back the wires, test to make sure there
+are no shorts in the connector, then solder the wires into the holes
+where the link connector was</p>
+<p>&nbsp;</p>
+<p><img src="mods/link/5.jpg" height="306" width="436"></p>
+<p>Here's a pic of my wires soldered in the holes, I put them in
+standard network cable order to remember easier later
+(W/O,O,W/G,Bl,W/Bl,G,W/Br,Br)</p>
+<p>&nbsp;</p>
+<p><img src="mods/link/6.jpg" height="273" width="371"></p>
+<p>Just a pic from the bottom</p>
+<p>&nbsp;</p>
+<p><img src="mods/link/7.jpg" height="304" width="390"></p>
+<p>Putting the wires into the socket</p>
+<p>&nbsp;</p>
+<p><img src="mods/link/8.jpg" height="288" width="467"></p>
+<p>Completed cable end</p>
+<p>&nbsp;</p>
+<p><img src="mods/link/H2H.jpg" height="328" width="494"></p>
+<p>And here's 2 VB's connected!</p>
+<p>&nbsp;</p>
+<p>Pinout:</p>
+<p>Here's how the VB's should be connected for the link port to
+work. I have tried all the VB games that have been rumored to have link
+cable support, and unfortunately none of them do (at least with my
+pinout that I've found from homebrewn software that successfully
+communicates across the link port).</p>
+<p><img src="mods/link/pins.jpg" height="56" width="104"></p>
+<p>Looking at the socket on the VB, here's the pin #'s</p>
+<p>&nbsp;</p>
+<pre>COMCNT   1-------1 COMCNT<br>+5       2       2 +5<br>Clock    3-------3 Clock<br>Rx       4-------8 Tx<br>Sync In  5       6 Sync Out<br>Sync Out 6-------5 Sync In<br>GND      7-------7 GND<br>Tx       8-------4 Rx</pre>
+<p>Here's the pinout, I'm not 100% sure that this is how it was
+intended to be used, but as far as I can tell, this is how I think it
+should be, and it does successfully send and receive data. I'm also not
+100% sure of the pin names/functions, but this is what they appear to
+be, so those are the names I've given them for the time being.</p>
+<p>&nbsp;</p>
+<p>Programming:</p>
+<p>Check my programs out <a href="tech/programming.html">HERE</a>
+for
+examples on how to program for the link, and I'll write more specific
+details here later.</p>
+<p>When transmitting as the master, the Virtual Boy outputs a
+50KHz clock, which outputs data at
+50 kbit/second - The test sent 100kbytes (800kbits) of data one byte at
+a time from a variable and read each byte to a variable in
+approximately 16 seconds, also did with no reading or writing to
+variables in approximately the same amount of time, and also switching
+from master/remote for every send/receive in approximately the same
+amount of time. Because of the single clock and dedicated Send and
+Receive pins, it always runs full duplex.</p>
+<p>When the Virtual Boy is run as a slave and clocked by an
+external source, the clock can be much faster than 50KHz.
+&nbsp;I've successfully sent data with no errors at a maximum of
+about 285KHz.&nbsp;Faster than that, at least with my system and
+current wiring, will drop bits on occasion. &nbsp;The maximum speed
+may not be consistent across all systems though.</p>
+</div>
+<div style="width: 200px;" id="left">
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Tech</div>
+<div class="navcontent">
+Repair
+<ul>
+<li><a href="dissect.html">Dissecting the
+Virtual Boy</a></li>
+<li><a href="displayfix.html">Fixing Glitchy
+Displays</a></li>
+</ul>
+Development
+<ul>
+<li><a href="techinfo.html">Virtual Boy
+Technical Info</a></li>
+<li><a href="programming.html">Programming /
+Emulation</a></li>
+<li><a href="progcart.html">Reprogrammable
+Cart</a></li>
+<li><a href="dumper.html">Cartridge Dumper</a></li>
+<li><a href="debugger.html">VUE-Debugger</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Modifications</div>
+<div class="navcontent">Useful Mods
+<ul>
+<li><a href="tvvga.html">TV/VGA Output</a></li>
+<li><a href="linkcable.html">Link Cable</a></li>
+<li><a href="rechargepack.html">Rechargable
+Battery
+Pack</a></li>
+<li><a href="controllers.html">Controller
+Modifications</a></li>
+</ul>
+Fun Mods
+<ul>
+<li><a href="rumble.html">Rumble Pack</a></li>
+<li><a href="painting.html">Painting the VB</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Other Virtual Boy Stuff</div>
+<div class="navcontent">
+<ul>
+</ul>
+Virtual Boy Prototypes
+<ul>
+<li><a href="proto_faceball.html">Faceball</a></li>
+<li><a href="proto_vbowl.html">Virtual
+Bowling</a></li>
+</ul>
+Article Scans
+<ul>
+<li><a href="scan_np.html">Nintendo
+Power</a></li>
+<li><a href="scan_other.html">Others</a></li>
+</ul>
+Store Displays
+<ul>
+<li><a href="disp_medium_us.html">Medium
+US Display</a></li>
+<li><a href="disp_small_us.html">Small
+US Display</a></li>
+<li><a href="disp_small_jp.html">Small
+JP Display</a></li>
+</ul>
+Misc
+<ul>
+<li><a href="cheats.html">Cheats</a></li>
+<li><a href="endings.html">Game Endings</a></li>
+<li><a href="wants.html">Stuff I want for
+the VB</a></li>
+<li><a href="coolstuff.html">Cool VB Stuff</a></li>
+<li><a href="links.html">Links</a></li>
+</ul>
+Contact
+<ul>
+<li><a href="http://chat.vr32.de" target="_blank">Virtual
+Boy Chat</a></li>
+<li><a href="email.jpg">Email
+Me</a></li>
+</ul>
+<ul>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Search Project: VB</div>
+<div class="navcontent">
+<form method="get" name="tipue" action="search.html">
+<table class="form_table" cellpadding="0" cellspacing="2">
+<tbody>
+<tr>
+<td class="form_td_left">
+<input name="d" class="field" type="text"></td>
+<td class="form_td_right">
+<input value="Search" class="button" type="submit"></td>
+</tr>
+</tbody>
+</table>
+</form>
+<script type="text/javascript" language="javascript">
+var sc_project=1721223; var sc_invisible=0; var sc_partition=16; var sc_security="28318578"; </script>
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script>
+<noscript><img
+src="http://c17.statcounter.com/counter.php?sc_project=1721223&java=0&security=28318578&invisible=0"
+border="0"> </noscript>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>Project: Virtual Boy</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Project: Virtual Boy - A site dedicated to hacking the Nintendo Virtual Boy">
+<meta name="keywords" content="Nintendo,Virtual,Boy,Hack,Hacking,Mods,Modifications,Repair,Display,Problem,Prototype,gcc,gccvb,C,C++,Emulator,Emulation">
+<link rel="stylesheet" type="text/css" href="style.css"></head>
+<body>
+<div style="width: 960px;" id="outer">
+<div class="red"></div>
+<div style="height: 24px;" id="location"><a href="./">Project:
+Virtual Boy</a>
+</div>
+<div style="margin-top: 0px; height: 18px;" id="sublocation">&nbsp;
+&nbsp;
+&nbsp;Virtual Boy Lives @ Project: VB</div>
+<div style="width: 745px;" id="right">
+<h1>Fixing Glitchy Displays</h1>This page describes two methods of
+fixing the glitchy display problems. The easiest one is the oven
+method, which involves reheating the glue to reattach the cables to the
+displays. This typically works well, but since the underlying problem
+isn't really addressed, it is likely to reoccur (and I have seen the
+problem reoccur, and others have as well). The second method is more
+difficult, but should be a permanent fix. This involves soldering the
+cable to the display by chemically dissolving the coating over the
+cable, exposing the bare copper.<br><br>Below are two pictures of what you may
+encounter with LED ribbon cable problems. There are other problems that
+could be caused by bad connections (blank screen, solid red screen,
+etc), but these are the most common.<br>
+<p> <br>
+<img alt="Bottom" src="tech/displayfix/dispwithlines.jpg" align="top" height="405" width="640"><br>
+Constant horizontal lines across the display</p>
+<p> <img alt="Bottom" src="tech/displayfix/glitchydisp.jpg" align="top" height="413" width="640"><br>
+Partial horizontal lines and random noise</p>
+<p>To fix, first you're going to need to open up your Virtual Boy
+system. Click <a href="dissect.html">HERE</a>
+for instructions how. You don't need to completely disassemble, just
+enough to get to the LED bar displays. Once apart, follow these
+instructions:</p>
+<p><img alt="Bottom" src="tech/displayfix/dispinstalled.jpg" align="top" height="503" width="640"><br>
+This is what you need to get to. Unscrew the two small phillips screws
+holding the LED PCB to the plastic case (DON'T unscrew the star screws
+or you may mess up the alignment). Pull the cable straight out of the
+socket on the motherboard.</p>
+<p><img alt="Bottom" src="tech/displayfix/dispremoved.jpg" align="top" height="487" width="640"><br>
+This is what it will look like after removed.</p>
+<p><img alt="Bottom" src="tech/displayfix/dispsolo.jpg" align="top" height="311" width="640"><br>
+Here is the display removed.</p><p>Here's where you get to "Choose Your Own Adventure".<br>Method 1: <a href="#Oven">Oven Method</a><br>Method 2: <a href="#Solder">Solder Method</a></p><p></p><p>A little history about this problem. I don't believe this
+problem is necessarily related to abuse. The cables are very light and
+nothing is loose enough that would get knocked free if subjected to
+shock (I'm not saying it's okay to beat up the system... there are
+other parts that won't take the abuse). I saw this problem with my
+personal system (which I take very good care of) several years ago and
+decided to attempt to fix it. I tried several methods, but these are the ones
+I've found to work best. Another interesting fact... I had a BRAND NEW
+Virtual Boy system a while ago... BOTH displays had problems related to
+the cables. I believe the problem is actually caused more by the IPD
+adjustment than anything. The brand new system had the IPD adjustment
+turned in, which caused the display cables to be pushed outward,
+detaching it from the rubber glue and of course causing glitchy
+displays (see pic below). So, it may be a good idea to turn your IPD
+outward if you plan on storing it for a while. Note: The rubber glue
+isn't important to the proper function of the display, it's merely a
+reinforcement.</p>
+<p><img alt="Bottom" src="tech/displayfix/seperated.jpg" align="top" height="480" width="640"><br>
+Notice the rubber is seperated from the cable.</p>
+<p><img alt="Bottom" src="tech/displayfix/attached.jpg" align="top" height="480" width="640"><br>
+Compared to another display where the rubber is still attached.</p>
+<p>After you put it back together, you might want to put in
+standard phillips screws to make it easier to put together and so you
+can open it again if you want, and you should check the alignment by
+inserting a game and pressing Left, B, Down, A, Up on the right D-Pad.</p><p></p>
+<p><a name="Oven"></a>Oven Method:</p><p><img alt="Bottom" src="tech/displayfix/preheat.jpg" align="top" height="409" width="640"><br>
+Take one or both displays and lay them on a piece of aluminum foil or
+baking pan with the clear plastic cover and cable pointing up. Preheat
+the oven to 180-200 degrees F.</p>
+<p><img alt="Bottom" src="tech/displayfix/heated.jpg" align="top" height="455" width="640"><br>
+Once the oven is preheated, put the displays in until the cables soften
+up (wait until the cables lay pretty much flat). There's no need to
+cook them excessively long (you don't want to melt anything), a couple
+minutes should be plenty of time.</p>
+<p><img alt="Bottom" src="tech/displayfix/rubbing.jpg" align="top" height="640" width="362"><br>
+Immediately after removing the displays from the oven, flip them over
+and rub the back of the cables to the PCB to ensure a good bond.</p>
+<p><img alt="Bottom" src="tech/displayfix/tape1.jpg" align="top" height="426" width="640"><br>
+After making sure the cable is connected to the PCB well, I suggest
+reinforcing the cable with a piece of tape. I cut thin strips of clear
+packing tape as it resists stretching and the adhesive is good, but
+other tapes probably work as well.</p>
+<p><img alt="Bottom" src="tech/displayfix/tape2.jpg" align="top" height="273" width="640"><br>
+Then wrap the tape around the display. Be sure to tape it as shown so
+the tape can't come loose since it will be screwed up against the
+plastic housing.</p>
+<p><img alt="Bottom" src="tech/displayfix/dispinstalled.jpg" align="top" height="503" width="640"><br>
+And then of course reinstall the display reverse of the removal.</p><br><a name="Solder"></a>Solder Method:<br>First, let me
+explain the cable a little bit. The cable itself is a type called Flat
+Flex Cable (FFC), also sometimes called Flat Printed Circuit (FPC).
+It's a thin flexible cable with a clear laminate and copper for the
+conductor. There are many types of FFC, and I'm not 100% sure of the
+specifics of the type used on the VB, but I have made some assumptions
+which seem correct from my observations. The laminate is a Polyimide,
+which is strong, high heat tolerant, and chemical resistant. The copper
+is standard copper (rolled thin), attached to the polyimide with an
+adhesive (acrylic and epoxy adhesives seem common, not sure which one
+is used, but it doesn't really matter).<br><br>All of the information
+is AS-IS for informational use only. I'm not a chemist or an expert in
+this field, I am just reporting from my own observations and research I
+have done, so if you try any of this, you're doing it at your own
+risk... I'm not responsible if you try any of this and something goes
+wrong. Do your own research, and make sure you're comfortable with what
+you're doing before doing anything, and remember SAFETY FIRST.<br><br>Anyway,
+the challenge was to remove some of the laminate to
+expose the bare copper, so it could be soldered down to the copper on the
+display PCB. The problem is that the coating is very chemical
+resistant, and also that the copper is very thin, so physically
+removing the coating with a knife or soldering iron easily damages the
+copper cable. I read that Polyimides are very resistant to chemicals
+except hot Sodium Hydroxide (NaOH, AKA Lye, typically used in drain
+cleaners), and possibly hot Sulfuric Acid. Sulfuric Acid would damage
+the copper though, and I'm not sure of a good place to buy it (besides
+removing it from my car battery), and it's pretty dangerous to work
+with. NaOH is easy to find, I was able to pick up a large container of
+it at the hardware store (drain cleaner section) for about $8, and it
+doesn't damage the copper. You still need to be careful working with
+it, but chemical resistant gloves and goggles, along with adequate
+ventilation should be fine.<br><br><span style="font-weight: bold;">When
+buying the drain cleaner,&nbsp;make sure it is Sodium Hydroxide (NaOH,
+Lye), not one of the other chemicals that are sometimes used as drain
+cleaners.</span><br><br><img style="width: 700px; height: 640px;" alt="" src="tech/displayfix/needed.jpg"><br>To do this, first preheat the oven/toaster oven to about
+200F, and turn it off when it is pre-heated. &nbsp;I don't know whether the small amount of fumes from&nbsp;the NaOH are harmful, but I'd recommend not using your good oven/toaster oven to do this.<br><br><img style="width: 700px; height: 441px;" alt="" src="tech/displayfix/crystals.jpg"><br>Pour just a very small amount of NaOH crystals into a chemical resistant container (I used a small ceramic bowl).<br><br><img style="width: 700px; height: 481px;" alt="" src="tech/displayfix/soaking.jpg"><br>Then
+add just a few drops of water and move the water around until the
+crystals dissolve (don't add too much water or it will dilute it too
+much). &nbsp;The chemical reaction will make some heat, but if it
+doesn't dissolve, you can take a hair dryer and heat it up, and it will
+dissolve. Then soak a thin strip of paper towel in the solution.<br><br><img style="width: 700px; height: 260px;" alt="" src="tech/displayfix/heating.jpg"><br>Place the soaked paper towel over the edge
+of the display cable and let it sit in the oven for a few minutes.<br><br><span style="font-weight: bold;">Make sure the oven is turned off, but still warm for this step.</span> &nbsp;The radiant heat from the oven burners will curl the cable very quickly if they turn on (at least in this toaster oven).<br><br>Just
+keep watching it, and periodically pull up the paper towel and check
+whether the laminate has dissolved yet. &nbsp;Once you see bare copper,
+pull it out. &nbsp;You don't need to really worry about leaving it in
+too long though, since neither the copper nor the PCB are easily
+damaged by the NaOH. &nbsp;You should then neutralize the NaOH. &nbsp;I
+typically carefully wipe the area to remove any standing puddle of the
+solution, then carefully but thoroughly rinse the area with water to
+remove any traces of the chemical. &nbsp;You could probably also use a
+mild acid, like a water/vinegar mix, and wipe the area as well.
+&nbsp;There may also be a small amount of adhesive left which can be
+removed with Goof Off or something similar.<br><br><span style="font-weight: bold;">Be very careful not to get water, or especially chemicals, on or under the clear plastic window on the front.</span>
+&nbsp;When rinsing, it's easy to get water to run on the front of the
+display, which easily seeps underneath the window. &nbsp;If any
+moisture gets underneath there, it must be removed before hooking it
+back up. &nbsp;Pressing on clear tabs on the back where it goes through
+the PCB creates a small gap, which you can then use a paper towel to
+wick most of the liquid out with, and then use a hair dryer or
+something similar to evaporate the moisture and cause it to escape
+through the gap. &nbsp;The NaOH will cloud up the window, so be
+extremely careful not to get any on the window.<br><br><img style="width: 700px; height: 302px;" alt="" src="tech/displayfix/beforesolder.jpg"><br>This is what it looks like after dissolving the laminate. &nbsp;I
+used a fiberglass pencil to clean the copper contacts and bare copper
+cable, although that's not required.<br><br><img style="width: 700px; height: 275px;" alt="" src="tech/displayfix/aftersolder.jpg"><br>Then,
+I soldered it. &nbsp;It is a pretty fine pitch, so you have to be
+careful, and use a clean soldering iron and plenty of flux.<br><br>This
+method has worked really well for me the several times I've done it,
+and it really doesn't take a lot of effort once you have everything set
+up. &nbsp;There are some other slightly different methods which can
+also be used to be able to solder the cable.<br><br>One method involves
+the same NaOH on the paper towel. &nbsp;But rather than putting it in
+the oven, you can press it against the cable with a heated clothes iron
+for a couple minutes. &nbsp;This method works well, but you need to be
+really careful not to squeeze out the chemical and have it
+drip&nbsp;onto the clear plastic window on the front. &nbsp;The
+chemical also damaged the finish on my iron, so I'd recommend not using
+your good iron (I bought a cheap iron at Goodwill specifically for this
+kind of stuff).<br><br>The other method can be done without any
+chemicals or heat, although it's more difficult to do well.
+&nbsp;Rather than dissolving the laminate, you can use a knife to
+scrape it away, leaving the bare copper. &nbsp;You need a good sharp
+knife tip, and just lightly scrape the laminate until you reach the
+copper. &nbsp;Be careful not to scrape too hard or you can tear the
+really thin copper. &nbsp;Once you have the copper exposed, solder it
+as shown above.<br><br>Some notes on all of these methods:<br>Since
+the copper in the cable is very thin, it can be very easily damaged by
+too much heat. Make sure to turn your soldering iron down to a low
+temp. On my temperature controlled iron, I had good results at
+450F-500F, and damaged several pins at 650F.<br><br>When using
+NaOH, make sure you neutralize it after you're done dissolving the
+cable (in whichever method you try). If you don't, it's possible that
+it'll further damage the cable if left there for too long, and it could
+damage your soldering iron tip, or give off harmful gases when heated
+by your soldering iron, and really, you just don't want NaOH residue on
+your display. I'm not sure what the best way to neutralize it is
+though. I've been just running it under water for a long time, which
+eventually rinses it off/neutralizes it (after a minute or so). It
+could probably be neutralized better using a mild acid, like diluted
+vinegar, although you'd need to be careful not to cause a reaction
+(like the baking soda and vinegar volcano). Although I don't recommend touching it, if you do touch it and it
+feels slippery, you need to rinse/neutralize it some more.<br><br>Because of the problem of getting moisture
+under the cover, one thing that might work well is neutralizing the
+NaOH with a Q-tip dipped in a mild acid and rubbing just the spots that
+had contact with NaOH. Then use another Q-tip or paper towel to wipe with water,
+and then dry. This should prevent getting water/chemicals underneath
+the cover when neutralizing, although you still need to be cautious
+when working with the chemicals in every step to keep them from making
+contact with the cover.<br></div>
+<div style="width: 200px;" id="left">
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Tech</div>
+<div class="navcontent">
+Repair
+<ul>
+<li><a href="dissect.html">Dissecting the
+Virtual Boy</a></li>
+<li><a href="displayfix.html">Fixing Glitchy
+Displays</a></li>
+</ul>
+Development
+<ul>
+<li><a href="techinfo.html">Virtual Boy
+Technical Info</a></li>
+<li><a href="programming.html">Programming /
+Emulation</a></li>
+<li><a href="progcart.html">Reprogrammable
+Cart</a></li>
+<li><a href="dumper.html">Cartridge Dumper</a></li>
+<li><a href="debugger.html">VUE-Debugger</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Modifications</div>
+<div class="navcontent">Useful Mods
+<ul>
+<li><a href="tvvga.html">TV/VGA Output</a></li>
+<li><a href="linkcable.html">Link Cable</a></li>
+<li><a href="rechargepack.html">Rechargable
+Battery
+Pack</a></li>
+<li><a href="controllers.html">Controller
+Modifications</a></li>
+</ul>
+Fun Mods
+<ul>
+<li><a href="rumble.html">Rumble Pack</a></li>
+<li><a href="painting.html">Painting the VB</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Other Virtual Boy Stuff</div>
+<div class="navcontent">
+<ul>
+</ul>
+Virtual Boy Prototypes
+<ul>
+<li><a href="proto_faceball.html">Faceball</a></li>
+<li><a href="proto_vbowl.html">Virtual
+Bowling</a></li>
+</ul>
+Article Scans
+<ul>
+<li><a href="scan_np.html">Nintendo
+Power</a></li>
+<li><a href="scan_other.html">Others</a></li>
+</ul>
+Store Displays
+<ul>
+<li><a href="disp_medium_us.html">Medium
+US Display</a></li>
+<li><a href="disp_small_us.html">Small
+US Display</a></li>
+<li><a href="disp_small_jp.html">Small
+JP Display</a></li>
+</ul>
+Misc
+<ul>
+<li><a href="cheats.html">Cheats</a></li>
+<li><a href="endings.html">Game Endings</a></li>
+<li><a href="wants.html">Stuff I want for
+the VB</a></li>
+<li><a href="coolstuff.html">Cool VB Stuff</a></li>
+<li><a href="links.html">Links</a></li>
+</ul>
+Contact
+<ul>
+<li><a href="http://chat.vr32.de" target="_blank">Virtual
+Boy Chat</a></li>
+<li><a href="email.jpg">Email
+Me</a></li>
+</ul>
+<ul>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Search Project: VB</div>
+<div class="navcontent">
+<form method="get" name="tipue" action="search.html">
+<table class="form_table" cellpadding="0" cellspacing="2">
+<tbody>
+<tr>
+<td class="form_td_left">
+<input name="d" class="field" type="text"></td>
+<td class="form_td_right">
+<input value="Search" class="button" type="submit"></td>
+</tr>
+</tbody>
+</table>
+</form>
+<script type="text/javascript" language="javascript">
+var sc_project=1721223; var sc_invisible=0; var sc_partition=16; var sc_security="28318578"; </script>
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script>
+<noscript><img
+src="http://c17.statcounter.com/counter.php?sc_project=1721223&java=0&security=28318578&invisible=0"
+border="0"> </noscript>
+</div>
+</div>
+</div>
+</div>
+</body></html>

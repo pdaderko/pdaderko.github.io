@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>Project: Virtual Boy</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Project: Virtual Boy - A site dedicated to hacking the Nintendo Virtual Boy">
+<meta name="keywords" content="Nintendo,Virtual,Boy,Hack,Hacking,Mods,Modifications,Repair,Display,Problem,Prototype,gcc,gccvb,C,C++,Emulator,Emulation">
+<link rel="stylesheet" type="text/css" href="style.css"></head>
+<body>
+<div style="width: 960px;" id="outer">
+<div class="red"></div>
+<div style="height: 24px;" id="location"><a href="./">Project:
+Virtual Boy</a>
+</div>
+<div style="margin-top: 0px; height: 18px;" id="sublocation">&nbsp;
+&nbsp;
+&nbsp;Virtual Boy Lives @ Project: VB</div>
+<div style="width: 745px;" id="right">
+<h1>Long overdue site redesign, plus some cool new projects coming</h1>
+<div class="htimeauth">08/23/2008 | <a href="mailto:virtual.dot.boy@at@comcast.dot.net">DogP</a></div>
+<p align="left">Here's the new site design... I'm still in the process
+of getting all the pages back up, but I'll get that finished shortly,
+followed by a new update in content.</p>
+<h1>Site back up on new webspace, plus lots of updates</h1>
+<div class="htimeauth">07/17/2006 | <a href="mailto:virtual.dot.boy@at@comcast.dot.net">DogP</a></div>
+<p align="left">WOW! Sorry about the HUGE delay in this
+update, and sorry about the site downtime. I promise I've still been
+VB'ing, just been too busy to update, and I've switched ISPs, so that's
+what caused the downtime :-(. Thanks to Ferry from <a href="http://www.virtual-boy.org" target="_blank">www.virtual-boy.org</a>
+for the
+webspace. Anyway, for those that care, I've been busy with work and
+school mostly, I got my AS in Computer Science back in Dec. 03 from <a href="http://www.nvcc.edu/" target="_blank">NVCC</a>,
+and for the last two years I've been going to <a href="http://www.gmu.edu/" target="_blank">George
+Mason University</a> for a BS in Electrical Engineering. I can't
+wait to get done with school, I've got one more semester :-). I've also
+been collecting arcade games and pinball machines... right now I've got
+over 40 coin-op machines, with (lack of) space being my worst enemy
+&gt;_&lt;.</p>
+<p align="left">Now for the updates... I'll try to
+remember everything ;-). First, I've added a new section on fixing the
+glitchy display problems. This has become a MAJOR problem recently (and
+Nintendo has stopped repairing VBs :-( ), and after explaining how to
+fix it to lots of people, I figured I'd put up a tutorial on it (and
+also some stuff on modifying a security bit to work in the deep holes).
+I also got my hands on an official Nintendo VB EPROM cartridge, so I
+added pics and some info on that to the Reprogrammable Cart section.
+I've also made a reprogrammable cart PCB, which I've also added into
+the Reprogrammable Cart section. Sorry, they're not for sale yet... but
+I should have a few for sale eventually. I've been working on a progam
+to flash the cart from the VB (sending the data over the link port),
+that way you don't need an EPROM programmer, but it's still in the
+works (it works, but isn't complete yet). Oh yeah... the last unknown
+pin on the cart edge (pin 5) is a /WE!!! I also picked up a USB Virtual
+Boy controller kit from <a href="http://www.retrousb.com" target="_blank">www.retrousb.com</a> and it works
+great, so I put a page on that up in the controller section. Oh, and I
+reorganized a lot of my site (the behind the scenes stuff), so let me
+know if you find any broken links.</p>
+<p align="left">Coming soon (this is more of a reminder
+for myself than trying to get you excited about the next update ;-) ):
+I've successfully built a link cable to go from the VB link
+port-&gt;PC parallel port. So far I've done some simple speed tests
+and made a cart dumping program (with a CRC32 check to ensure a good
+dump). Thanks to Frostgiant (are you still out there???) for the help
+on the dumping program. I've also overclocked a VB... it works, and it
+is faster, but because the mirrors are dependent on the timing of the
+rest of the system, the display is messed up (the system runs stable to
+28MHz, at 33MHz the system gets glitchy, and at 40MHz, it won't start).
+Speeding the mirrors up proportionally should help the display problem.
+I've also been doing a lot of VB programming, mostly just hardware
+tests and demos, but I've also been working on a Mario game, which I'll
+get some pics and maybe a ROM of up of soon. I've also gotten some more
+game endings (V-Tetris, NFB, Insmouse, Golf, Mario Clash), some of
+which I think I already added, but I'll have to make sure. I'll get all
+of that information and code up hopefully in the next update (it's been
+so long, I have no idea where that stuff is anymore).</p>
+<p align="left">Obviously you've found my new web address
+(or it's still being redirected from <a href="http://projectvb.vze.com">http://projectvb.vze.com</a>), but if
+you find any broken links, please let me know. Of course since you're
+reading this the page is up, but I'm still in the process of uploading
+all of the new content so it may be a short while before all of the
+promised updates are available. Also, for those who haven't noticed, my
+email has changed too... it's virtual .dot. boy @at@ comcast .dot. net.</p>
+<h1>Controllers and other random stuff</h1>
+<div class="htimeauth">06/09/2003 |&nbsp;<a href="mailto:virtual.dot.boy@at@comcast.dot.net">DogP</a>
+</div>
+<p align="left"> Finally, another update! VB work has been
+a little slow lately because of finals and that kinda stuff... but now
+it's summer, so here's some of the projects I've been working on.
+First, I've made a new controller section for a few controller
+modifications and related stuff... I've got a lot more controller
+related stuff than I put up, but it's not really the top on my
+priorities to finish. In the controller section right now is the start
+of a how-to for an adapter to use NES/SNES controllers on the VB, and a
+VB controller with two outputs so you can control multiple VB's with
+one controller. I also added a how-to for a rechargable VB battery
+pack. And thanks to Parasyte for pointing out an article with a cheat
+to access a debug menu in Red Alarm, and for finding two more cheats in
+Jack Bros... those are in the cheats section. I also added a pic of a
+new "tool" for making cartridges in the reprogrammable cart sections.
+Lastly, I uploaded the ending description/pics for Virtual Fishing.</p>
+<h1>Homebrew stuff released, plus more pinout info</h1>
+<div class="htimeauth">04/19/2003 | <a href="mailto:virtual.dot.boy@at@comcast.dot.net">DogP</a>
+<br>
+</div>
+<p align="left"> Ugh... I STILL haven't gotten the
+projects I've been wanting to get up... but I did add two more pins to
+the cart pinout, leaving only pin 5 to figure out. Also, thanks to
+RedAlarm for sending me a scan of an article from GMR which does a
+short overview of the Virtual Boy, although it's a really crappy
+article, it's interesting to see :-P. And lastly, finally I'm releasing
+the ROMs / source to my apps / games that I've programmed for the VB,
+so those check out <a href="programming.html">HERE</a>.</p>
+<h1>VUE-Debugger</h1>
+<div class="htimeauth">03/08/2003 | <a href="mailto:virtual.dot.boy@at@comcast.dot.net">DogP</a>
+<br>
+</div>
+<p align="left"> This is a quick update with some pics and
+info on the VUE-Debugger that I'm borrowing from a friend. Check it out
+under the Virtual Boy Development section. I'll get more info up later
+when I get it working, and I've got some more projects I'd like to get
+up, but I'm going out of town for Spring Break next week :-), so it'll
+be a couple weeks until the next update.</p>
+<h1>VB systems talk over the Link Cable</h1>
+<div class="htimeauth">02/19/2003 | <a href="mailto:virtual.dot.boy@at@comcast.dot.net">DogP</a>
+<br>
+</div>
+<p align="left"> Here's an update that I've been trying to
+get up for the last few weeks, but just haven't gotten around to it...
+I've gotten 2 VB's actually communicating over the link cable, so I put
+up a link cable diagram as I think it should be. I also put up an
+updated cartridge pinout. Also, Tonight I made another flash cart, so I
+put up a few pics of that one. There were a few other things I was
+trying to get put up, but I guess they'll have to wait until the next
+update. And for those of you that were having problems with the old
+java menu, I made a temporary html one until I get a better one.</p>
+<h1>Reading SRAM, plus game endings</h1>
+<div class="htimeauth">01/16/2003 | <a href="mailto:virtual.dot.boy@at@comcast.dot.net">DogP</a>
+<br>
+</div>
+<p align="left"> Happy New Year everyone! The biggest part
+of this update is my new how-to on reading / writing the SRAM with a
+Game Boy SRAM read/writer, which is under the reprogrammable cart
+section. I also added some new game endings, including Virtual Lab and
+SD Gundam.</p>
+<h1>Merry Christmas! &nbsp;More Prototype pics/info!</h1>
+<div class="htimeauth">12/25/2002 | <a href="mailto:virtual.dot.boy@at@comcast.dot.net">DogP</a>
+<br>
+</div>
+<p align="left"> Merry Christmas everyone! I added a
+little more info / the rest of the pics I have right now of the protos,
+and made their own pages for each. Also, for mac owners, ViBE 1.0b2 has
+been released! Now I'm just hoping for a PC version *hint hint* :-)</p>
+<h1>Flash Cart info, plus Tech Specs</h1>
+<div class="htimeauth">12/18/2002 | <a href="mailto:virtual.dot.boy@at@comcast.dot.net">DogP</a>
+<br>
+</div>
+<p align="left"> Here's the follow-up that I promised...
+basically, I just added the info on the flash cart, a little more info
+on the technical specs of the VB, and updated the VB ROM list. I'll try
+to get more pics / info up on the protos soon, but I've got to study
+for my calc final for tomorrow :-(, but then I'm off for a month!</p>
+<h1>Prototypes Surfaced! &nbsp;Faceball and Virtual Bowling!</h1>
+<div class="htimeauth">12/18/2002 | <a href="mailto:virtual.dot.boy@at@comcast.dot.net">DogP</a>
+<br>
+</div>
+<p align="left"> Well, MANY thanks go out to the
+mysterious VB collector "Mr. G"! for sending me pictures and
+information on the only known prototypes, Faceball and Virtual
+Bowling!!! I am still working on completing the rest of my update, but
+for the time being, you can view the pics / info of the protos here!
+I have been in contact with him and am trying to get more pics /
+information on them, so expect more to come soon, along with
+information on my flash reprogrammable cartridge and a few other things
+I've been working on over the past few months.</p>
+<h1>Find me at projectvb.vze.com, plus other stuff</h1>
+<div class="htimeauth">11/17/2002 | <a href="mailto:virtual.dot.boy@at@comcast.dot.net">DogP</a>
+<br>
+</div>
+<p align="left"> This is mostly just a follow-up update,
+there are still some parts that aren't completed, but I just needed to
+put up what I had. First, you can access my page from an easier to
+remember address... it is <a href="http://projectvb.vze.com/" target="_blank">http://projectvb.vze.com</a> . Now for
+the update, I added information on the painting of the Virtual Boy, I
+added some technical information, added a picture of 2 VB's linked
+together (still in process of figuring out the link port), and I
+scanned in pics of some VB merchandise (Virtual T-Shirt... is it really
+there? or should it be Virtual <b>Boy</b> T-Shirt :-) )
+from a Super Power Club (Nintendo Power subscribers) pamphlet... thanks
+to Neil Schuldenfrei for pointing that out.</p>
+<h1>Lots of new VB Development stuff</h1>
+<div class="htimeauth">10/25/2002 | <a href="mailto:virtual.dot.boy@at@comcast.dot.net">DogP</a>
+<br>
+</div>
+<p align="left"> Well, after WAY too long of no updates, I
+hope you all enjoy this one. I have done a lot of work lately on the
+development of the Virtual Boy. In my update, I added a few new
+sections including a how-to for a cart dumper, a reprogrammable EPROM
+cart, I started an emulation/programming page which will be updated in
+my next update (soon), I added a section on painting my VB which will
+also be updated next time, and I did a short how-to on modifying your
+link port to use a standard RJ45 jack. BTW, the how-to's aren't
+finished yet, I just put them up so you all could see it. I will
+complete the how-to's in my next update. I also cleaned up my links
+section a little.</p>
+<h1>And some more game endings</h1>
+<div class="htimeauth">06/13/2002 | <a href="mailto:virtual.dot.boy@at@comcast.dot.net">DogP</a>
+<br>
+</div>
+<p align="left"> I updated my game endings section with
+the pictures I took a while back... I'll be continuing to work on it,
+but that is probably going to be the most progress on it in one update
+for a while. Other than that, we changed the server where the Virtual
+Boy Chat room is located.</p>
+<h1>More game endings</h1>
+<div class="htimeauth">05/15/2002 | <a href="mailto:virtual.dot.boy@at@comcast.dot.net">DogP</a>
+<br>
+</div>
+<p align="left">I have updated my game endings section
+with a few more games, thanks to Ferry for letting me rip his game
+endings. I still have some more to go, and I have personally been going
+through some of the games to get pictures of the endings, which will be
+up on my next update.</p>
+<h1>New name, same great taste</h1>
+<div class="htimeauth">04/26/2002 | <a href="mailto:virtual.dot.boy@at@comcast.dot.net">DogP</a>
+<br>
+</div>
+<p align="left">I have changed the name of my site from
+"Pat's Virtual Boy Page" to Project: Virtual Boy (Project: VB). I have
+also added a new section for game endings. The game endings is still
+under construction, but I hope to continue to work towards getting a
+fairly complete game endings page.</p>
+<h1>ViBE released</h1>
+<div class="htimeauth">04/04/2002 | <a href="mailto:virtual.dot.boy@at@comcast.dot.net">DogP</a>
+<br>
+</div>
+<p align="left"> 4/4/02 - I have added to the menu a link
+to the new Virtual Boy chat room. Also, big news for mac owners - ViBE,
+the macintosh Virtual Boy emulator has been released to the public. I
+personally have tried it out, and it works very well. It can be
+downloaded at <a href="http://www.bannister.org/software/vibe.htm" target="_blank">Here</a>.</p>
+<h1>Store Displays</h1>
+<div class="htimeauth">03/23/2002 | <a href="mailto:virtual.dot.boy@at@comcast.dot.net">DogP</a>
+<br>
+</div>
+<p align="left"> 3/23/02 - Finally, another real update. I
+added a new section to my site with pictures and descriptions of my two
+store display units.</p>
+<h1>Webspace Changes, I'm back!</h1>
+<div class="htimeauth">02/25/2002 | <a href="mailto:virtual.dot.boy@at@comcast.dot.net">DogP</a>
+<br>
+</div>
+<p align="left"> Finally got my webspace back... I'm glad
+you found it. Anyway, no change in content, just put it all back up to
+the new server since my previous internet provider went bankrupt, so it
+should be here for a while. Also my email address has changed to <a href="mailto:virtual.boy@mchsi.com">virtual.boy@mchsi.com</a>
+. Please tell me if there are any broken links, pages that will not
+show, or still have a link to my old email address. I tried to fix them
+all, but may have forgotten a few.</p>
+<h1>New Menu</h1>
+<div class="htimeauth">07/04/2001 | <a href="mailto:virtual.dot.boy@at@comcast.dot.net">DogP</a>
+<br>
+</div>
+<p align="left"> This is a very small update... Pretty
+much all that has changed is the new java menu bar on the side. Please
+email me if you have problems viewing the new bar, or is extremely
+slow. I plan on adding more of these nice looking java bars if they
+seem compatible with everybody's internet browsers.</p>
+<h1>New update page, and some minor updates</h1>
+<div class="htimeauth">06/21/2001 | <a href="mailto:virtual.dot.boy@at@comcast.dot.net">DogP</a>
+<br>
+</div>
+<p align="left">The first update is this long needed
+update page. While I was working on it, I decided to make a few minor
+cosmetic changes. I also added some new things to the cheats section
+(Nester's Funky Bowling and Mario Clash).</p>
+<p></p>
+</div><div style="width: 200px;" id="left">
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Tech</div>
+<div class="navcontent">
+Repair
+<ul>
+<li><a href="dissect.html">Dissecting the
+Virtual Boy</a></li>
+<li><a href="displayfix.html">Fixing Glitchy
+Displays</a></li>
+</ul>
+Development
+<ul>
+<li><a href="techinfo.html">Virtual Boy
+Technical Info</a></li>
+<li><a href="programming.html">Programming /
+Emulation</a></li>
+<li><a href="progcart.html">Reprogrammable
+Cart</a></li>
+<li><a href="dumper.html">Cartridge Dumper</a></li>
+<li><a href="debugger.html">VUE-Debugger</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Modifications</div>
+<div class="navcontent">Useful Mods
+<ul>
+<li><a href="tvvga.html">TV/VGA Output</a></li>
+<li><a href="linkcable.html">Link Cable</a></li>
+<li><a href="rechargepack.html">Rechargable
+Battery
+Pack</a></li>
+<li><a href="controllers.html">Controller
+Modifications</a></li>
+</ul>
+Fun Mods
+<ul>
+<li><a href="rumble.html">Rumble Pack</a></li>
+<li><a href="painting.html">Painting the VB</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Other Virtual Boy Stuff</div>
+<div class="navcontent">
+<ul>
+</ul>
+Virtual Boy Prototypes
+<ul>
+<li><a href="proto_faceball.html">Faceball</a></li>
+<li><a href="proto_vbowl.html">Virtual
+Bowling</a></li>
+</ul>
+Article Scans
+<ul>
+<li><a href="scan_np.html">Nintendo
+Power</a></li>
+<li><a href="scan_other.html">Others</a></li>
+</ul>
+Store Displays
+<ul>
+<li><a href="disp_medium_us.html">Medium
+US Display</a></li>
+<li><a href="disp_small_us.html">Small
+US Display</a></li>
+<li><a href="disp_small_jp.html">Small
+JP Display</a></li>
+</ul>
+Misc
+<ul>
+<li><a href="cheats.html">Cheats</a></li>
+<li><a href="endings.html">Game Endings</a></li>
+<li><a href="wants.html">Stuff I want for
+the VB</a></li>
+<li><a href="coolstuff.html">Cool VB Stuff</a></li>
+<li><a href="links.html">Links</a></li>
+</ul>
+Contact
+<ul>
+<li><a href="http://chat.vr32.de" target="_blank">Virtual
+Boy Chat</a></li>
+<li><a href="email.jpg">Email
+Me</a></li>
+</ul>
+<ul>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Search Project: VB</div>
+<div class="navcontent">
+<form method="get" name="tipue" action="search.html">
+<table class="form_table" cellpadding="0" cellspacing="2">
+<tbody>
+<tr>
+<td class="form_td_left">
+<input name="d" class="field" type="text"></td>
+<td class="form_td_right">
+<input value="Search" class="button" type="submit"></td>
+</tr>
+</tbody>
+</table>
+</form>
+<script type="text/javascript" language="javascript">
+var sc_project=1721223; var sc_invisible=0; var sc_partition=16; var sc_security="28318578"; </script>
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script>
+<noscript><img
+src="http://c17.statcounter.com/counter.php?sc_project=1721223&java=0&security=28318578&invisible=0"
+border="0"> </noscript>
+</div>
+</div>
+</div>
+</div>
+</body></html>

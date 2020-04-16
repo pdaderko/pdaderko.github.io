@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>Project: Virtual Boy</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Project: Virtual Boy - A site dedicated to hacking the Nintendo Virtual Boy">
+<meta name="keywords" content="Nintendo,Virtual,Boy,Hack,Hacking,Mods,Modifications,Repair,Display,Problem,Prototype,gcc,gccvb,C,C++,Emulator,Emulation">
+<link rel="stylesheet" type="text/css" href="style.css"></head>
+<body>
+<div style="width: 960px;" id="outer">
+<div class="red"></div>
+<div style="height: 24px;" id="location"><a href="./">Project:
+Virtual Boy</a>
+</div>
+<div style="margin-top: 0px; height: 18px;" id="sublocation">&nbsp;
+&nbsp;
+&nbsp;Virtual Boy Lives @ Project: VB</div>
+<div style="width: 745px;" id="right">
+<h1>Cartridge Dumper</h1>
+<img src="tech/dumper/connected1.jpg" height="339" width="538">
+<p>Cart dumper made out of an EPROM programmer and a BUNCH of
+wires</p>
+<p>&nbsp;</p>
+<p><img src="tech/dumper/allseparate.jpg" height="347" width="625"></p>
+<p>This is what you will need to make a cart dumper - two 32pin
+(or more - I have 40 pins because they're easier to find) sockets, a VB
+Cart Socket (from an actual Virtual Boy system :-( , or a lot of pins
+w/ some sort of epoxy holding it's shape), and a board to mount it to
+(not completely necessary, but definately a help) - my board has
+connection strips across it so there's really 47 sets of 5 holes all
+connected on each half, those strips make it easier to connect multiple
+wires to the same pin. Then you need some Cat3 or Cat5 wire (Cat3 is
+better because it isn't twisted pair, which makes it easier to pull
+each wire out individually, and it doesn't tangle later when you're
+trying to solder). All this stuff (minus the VB Connector is available
+at Radio Shack) Then you also need a EPROM reader - For everything
+here, I am using an EPROMER5.</p>
+<p>&nbsp;</p>
+<p><img src="tech/dumper/before.jpg" height="87" width="254"></p>
+<p>Before</p>
+<p><img src="tech/dumper/after.jpg" height="87" width="237"></p>
+<p>After - if you get 40 pin IC sockets, you should remove the
+extra 8 pins so it fits in the EPROM reader easier - you can just push
+them through from the bottom out the top.</p>
+<p>&nbsp;</p>
+<p><img src="tech/dumper/wiresocket.jpg" height="331" width="442"></p>
+<p>Then you should solder in the 32 wires to each of the 2
+sockets, I used a color order to make it easier to find the wire I'm
+looking for in the mess</p>
+<p>&nbsp;</p>
+<p><img src="tech/dumper/connector.jpg" height="492" width="423"></p>
+<p>Then you must remove the connector from the VB - it could
+probably be done with a soldering iron and some wick, but I decided
+that a faster way would be to take a torch and melt the solder at all
+the pins at once, then just pull the whole thing off. Then solder all
+the wires onto the connector (can be very tough and frustrating), it
+works best to tin the wire first, then solder to the pins, and DON'T
+use too much solder, it can short multiple pins easily because they are
+so close together. As you can see, I used Cat5 on this part, and look
+how tangled those wires are!</p>
+<p>&nbsp;</p>
+<p><img src="tech/dumper/top.jpg" height="306" width="546"></p>
+<p>This is the connector after shortening and soldering all the
+wires to it - I just went in numerical order so it is easier to find
+the pins you want, and I connected all wires so I wouldn't have to
+later to access other things such as the save game memory and anything
+else that could come up.</p>
+<p>&nbsp;</p>
+<p><img src="tech/dumper/bottom.jpg" height="326" width="637"></p>
+<p>The bottom of the connector - as you can see, those rows all
+conected together to make it easier to solder more wires to each pin</p>
+<p>&nbsp;</p>
+<p>Then you want to look at <a href="tech/carts/eprom/EPROMpins.txt" target="_blank">this
+file</a> to see which wires to connect to which pins</p>
+<p>&nbsp;</p>
+<p><img src="tech/dumper/donetop.jpg" height="399" width="308"></p>
+<p>And here's the top of the finished dumper</p>
+<p>&nbsp;</p>
+<p><img src="tech/dumper/donebottom.jpg" height="415" width="276"></p>
+<p>And the bottom...</p>
+<p>&nbsp;</p>
+<p><img src="tech/dumper/connected2.jpg" height="298" width="563"></p>
+<p>And here it is connected to the EPROM Reader/Writer</p>
+<p>&nbsp;</p>
+<p><img src="tech/carts/eprom/program.jpg" height="382" width="552"></p>
+<p>To dump a game, you have to dump half of the cart at a time,
+then use a program to combine the even and odd bytes. You need to
+select the chip that corresponds with the rom size of the game you are
+dumping. A list of ROM sizes can be found <a href="http://www.goliathindustries.com/vb/download/vbgames.txt" target="_blank">here</a>. You have to remember that
+you are only dumping half at a time, so a game that is 512k, you only
+dump 256k at a time. But if you look at that list, the number shown is
+already half the physical disk size, so if it says 256k, you want to
+select a 27C020, 512k, select 27C040, and 1024k, select 27C080. Then
+connect the first side into the reader, and press read. Then after it
+reads, save the file and read the other half and do the same. Then you
+have to use a program to merge the two files together.</p>
+<p>You can also use this to program your chips if you plug your <a href="tech/carts/eprom.html">reprogrammable EPROM
+cart</a> into it, which may not seem too useful because you have
+to take the chips out to erase (or make something that erases them in
+the cart), but in the future it could be useful using an electronically
+eraseable media such as a Flash chip that could be permanently mounted
+inside the cart to look like a standard game.</p>
+</div>
+<div style="width: 200px;" id="left">
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Tech</div>
+<div class="navcontent">
+Repair
+<ul>
+<li><a href="dissect.html">Dissecting the
+Virtual Boy</a></li>
+<li><a href="displayfix.html">Fixing Glitchy
+Displays</a></li>
+</ul>
+Development
+<ul>
+<li><a href="techinfo.html">Virtual Boy
+Technical Info</a></li>
+<li><a href="programming.html">Programming /
+Emulation</a></li>
+<li><a href="progcart.html">Reprogrammable
+Cart</a></li>
+<li><a href="dumper.html">Cartridge Dumper</a></li>
+<li><a href="debugger.html">VUE-Debugger</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Modifications</div>
+<div class="navcontent">Useful Mods
+<ul>
+<li><a href="tvvga.html">TV/VGA Output</a></li>
+<li><a href="linkcable.html">Link Cable</a></li>
+<li><a href="rechargepack.html">Rechargable
+Battery
+Pack</a></li>
+<li><a href="controllers.html">Controller
+Modifications</a></li>
+</ul>
+Fun Mods
+<ul>
+<li><a href="rumble.html">Rumble Pack</a></li>
+<li><a href="painting.html">Painting the VB</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Other Virtual Boy Stuff</div>
+<div class="navcontent">
+<ul>
+</ul>
+Virtual Boy Prototypes
+<ul>
+<li><a href="proto_faceball.html">Faceball</a></li>
+<li><a href="proto_vbowl.html">Virtual
+Bowling</a></li>
+</ul>
+Article Scans
+<ul>
+<li><a href="scan_np.html">Nintendo
+Power</a></li>
+<li><a href="scan_other.html">Others</a></li>
+</ul>
+Store Displays
+<ul>
+<li><a href="disp_medium_us.html">Medium
+US Display</a></li>
+<li><a href="disp_small_us.html">Small
+US Display</a></li>
+<li><a href="disp_small_jp.html">Small
+JP Display</a></li>
+</ul>
+Misc
+<ul>
+<li><a href="cheats.html">Cheats</a></li>
+<li><a href="endings.html">Game Endings</a></li>
+<li><a href="wants.html">Stuff I want for
+the VB</a></li>
+<li><a href="coolstuff.html">Cool VB Stuff</a></li>
+<li><a href="links.html">Links</a></li>
+</ul>
+Contact
+<ul>
+<li><a href="http://chat.vr32.de" target="_blank">Virtual
+Boy Chat</a></li>
+<li><a href="email.jpg">Email
+Me</a></li>
+</ul>
+<ul>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Search Project: VB</div>
+<div class="navcontent">
+<form method="get" name="tipue" action="search.html">
+<table class="form_table" cellpadding="0" cellspacing="2">
+<tbody>
+<tr>
+<td class="form_td_left">
+<input name="d" class="field" type="text"></td>
+<td class="form_td_right">
+<input value="Search" class="button" type="submit"></td>
+</tr>
+</tbody>
+</table>
+</form>
+<script type="text/javascript" language="javascript">
+var sc_project=1721223; var sc_invisible=0; var sc_partition=16; var sc_security="28318578"; </script>
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script>
+<noscript><img
+src="http://c17.statcounter.com/counter.php?sc_project=1721223&java=0&security=28318578&invisible=0"
+border="0"> </noscript>
+</div>
+</div>
+</div>
+</div>
+</body></html>
