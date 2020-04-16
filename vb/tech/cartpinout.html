@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>Project: Virtual Boy</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Project: Virtual Boy - A site dedicated to hacking the Nintendo Virtual Boy">
+<meta name="keywords" content="Nintendo,Virtual,Boy,Hack,Hacking,Mods,Modifications,Repair,Display,Problem,Prototype,gcc,gccvb,C,C++,Emulator,Emulation">
+<link rel="stylesheet" type="text/css" href="../style.css"></head>
+<body>
+<div style="width: 960px;" id="outer">
+<div class="red"></div>
+<div style="height: 24px;" id="location"><a href="../">Project:
+Virtual Boy</a>
+</div>
+<div style="margin-top: 0px; height: 18px;" id="sublocation">&nbsp;
+&nbsp;
+&nbsp;Virtual Boy Lives @ Project: VB</div>
+<div style="width: 745px;" id="right">
+<h1>Cartridge Pinout</h1>To the best of my knowledge this is a complete cart pinout.
+<p>This table is originally from
+David Tucker, and I've just added the recently found pins.</p>
+<p>*Notes:</p>
+<p>Pins 55-58 are analog sound pins
+that the VB goes through between the sound source and the speakers. My
+guess it that they would have been used in the future for an audio
+enhancement chip, much like the Super Nintendo used.</p>
+<p>Pins 10,12,14 are the last 3
+addresses that were never used on the VB, but that means that the VB
+supports up to a 128 mbit chip! That would be a nice multicart! ;-)</p>
+<p>Pin 4 is /ES which is the
+expansion area select, which was to be used in the future for addon
+chips, similar to the SuperFX and other chips used on the SNES.</p>
+<p>Pin 9 is /INTCRO, which is the
+interrupt for the expansion area. </p>
+<p>Pin 5 is /WE. When writing to a
+memory location, this pin is pulled low (perfect for writing flash
+in-system)</p><p>Pin 7 is connected to CS2 (active high chip select) on the cart SRAM,
+but watching the pin on the oscilloscope, it doesn't appear to change
+during SRAM access. &nbsp;It isn't physically connected directly to
++5V, so don't use it for power, and it shouldn't be connected to the
++5V bus, but I'd recommend not designing anything to use that pin without first verifying that it works the way you expect.</p>
+<pre>Edge <br>Con        ROM         RAM<br>---        ---         ---<br> 1 (gnd)<br> 3                     27 (/WE)<br> 5 /WE<br> 7                     26 (CS2)<br> 9 /INTCRO<br>11         2 (A18)<br>13         3 (A17)<br>15         4 (A7)       3 (A7)<br>17         5 (A6)       4 (A6)<br>19         6 (A5)       5 (A5)<br>21         7 (A4)       6 (A4)<br>23         8 (A3)       7 (A3)<br>25         9 (A2)       8 (A2)<br>27        10 (A1)       9 (A1)<br>29        11 (A0)      10 (A0)<br>31        12 (/CE)<br>33 (gnd)  13 (GND)<br>35        14 (/OE)     22 (/OE)<br>37        15 (D0)      11 (D0)<br>39        16 (D8)<br>41        17 (D1)      12 (D1)<br>43        18 (D9)<br>45        19 (D2)      13 (D2)<br>47        20 (D10)<br>49        21 (D3)      15 (D3)<br>51        22 (D11)<br>53 (+5v)<br>55 (Right Analog Audio Source)<br>57 (Right Analog Audio Output)<br>59 (gnd)<br>----------------------------<br> 2 (gnd)<br> 4 /ES (Expansion Select)<br> 6                     20 (/CS1)<br> 8 (+5v)<br>10           (A22)<br>12           (A21)<br>14        44 (A20)<br>16        43 (A19)<br>18        42 (A8)      25 (A8)<br>20        41 (A9)      24 (A9)<br>22        40 (A10)     21 (A10)<br>24        39 (A11)     23 (A11)<br>26        38 (A12)     2  (A12)<br>28        37 (A13) <br>30        36 (A14)<br>32        35 (A15)<br>34        34 (A16)<br>36 (+5v)  33 (/BYTE)<br>38        31 (D15)<br>40        30 (D7)      19 (D7)<br>42        29 (D14)<br>44        28 (D6)      18 (D6)<br>46        27 (D13)<br>48        26 (D5)      17 (D5)<br>50        25 (D12)    <br>52        24 (D4)      16 (D4)<br>54 (+5v)  23 (Vdd)<br>56 (Left Analog Audio Source)<br>58 (Left Analog Audio Output)<br>60 (gnd)</pre>
+</div>
+<div style="width: 200px;" id="left">
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Tech</div>
+<div class="navcontent">
+Repair
+<ul>
+<li><a href="../dissect.html">Dissecting the
+Virtual Boy</a></li>
+<li><a href="../displayfix.html">Fixing Glitchy
+Displays</a></li>
+</ul>
+Development
+<ul>
+<li><a href="../techinfo.html">Virtual Boy
+Technical Info</a></li>
+<li><a href="../programming.html">Programming /
+Emulation</a></li>
+<li><a href="../progcart.html">Reprogrammable
+Cart</a></li>
+<li><a href="../dumper.html">Cartridge Dumper</a></li>
+<li><a href="../debugger.html">VUE-Debugger</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Modifications</div>
+<div class="navcontent">Useful Mods
+<ul>
+<li><a href="../tvvga.html">TV/VGA Output</a></li>
+<li><a href="../linkcable.html">Link Cable</a></li>
+<li><a href="../rechargepack.html">Rechargable
+Battery
+Pack</a></li>
+<li><a href="../controllers.html">Controller
+Modifications</a></li>
+</ul>
+Fun Mods
+<ul>
+<li><a href="../rumble.html">Rumble Pack</a></li>
+<li><a href="../painting.html">Painting the VB</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Other Virtual Boy Stuff</div>
+<div class="navcontent">
+<ul>
+</ul>
+Virtual Boy Prototypes
+<ul>
+<li><a href="../proto_faceball.html">Faceball</a></li>
+<li><a href="../proto_vbowl.html">Virtual
+Bowling</a></li>
+</ul>
+Article Scans
+<ul>
+<li><a href="../scan_np.html">Nintendo
+Power</a></li>
+<li><a href="../scan_other.html">Others</a></li>
+</ul>
+Store Displays
+<ul>
+<li><a href="../disp_medium_us.html">Medium
+US Display</a></li>
+<li><a href="../disp_small_us.html">Small
+US Display</a></li>
+<li><a href="../disp_small_jp.html">Small
+JP Display</a></li>
+</ul>
+Misc
+<ul>
+<li><a href="../cheats.html">Cheats</a></li>
+<li><a href="../endings.html">Game Endings</a></li>
+<li><a href="../wants.html">Stuff I want for
+the VB</a></li>
+<li><a href="../coolstuff.html">Cool VB Stuff</a></li>
+<li><a href="../links.html">Links</a></li>
+</ul>
+Contact
+<ul>
+<li><a href="http://chat.vr32.de" target="_blank">Virtual
+Boy Chat</a></li>
+<li><a href="../email.jpg">Email
+Me</a></li>
+</ul>
+<ul>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Search Project: VB</div>
+<div class="navcontent">
+<form method="get" name="tipue" action="search.html">
+<table class="form_table" cellpadding="0" cellspacing="2">
+<tbody>
+<tr>
+<td class="form_td_left">
+<input name="d" class="field" type="text"></td>
+<td class="form_td_right">
+<input value="Search" class="button" type="submit"></td>
+</tr>
+</tbody>
+</table>
+</form>
+<script type="text/javascript" language="javascript">
+var sc_project=1721223; var sc_invisible=0; var sc_partition=16; var sc_security="28318578"; </script>
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script>
+<noscript><img
+src="http://c17.statcounter.com/counter.php?sc_project=1721223&java=0&security=28318578&invisible=0"
+border="0"> </noscript>
+</div>
+</div>
+</div>
+</div>
+</body></html>

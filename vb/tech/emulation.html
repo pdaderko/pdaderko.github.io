@@ -1,0 +1,693 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>Project: Virtual Boy</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Project: Virtual Boy - A site dedicated to hacking the Nintendo Virtual Boy">
+<meta name="keywords" content="Nintendo,Virtual,Boy,Hack,Hacking,Mods,Modifications,Repair,Display,Problem,Prototype,gcc,gccvb,C,C++,Emulator,Emulation">
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div style="width: 960px;" id="outer">
+<div class="red"></div>
+<div style="height: 24px;" id="location"><a href="../">Project:
+Virtual Boy</a>
+</div>
+<div style="margin-top: 0px; height: 18px;" id="sublocation">&nbsp;
+&nbsp;
+&nbsp;Virtual Boy Lives @ Project: VB</div>
+<div style="width: 745px;" id="right">
+<h1>Virtual Boy Emulation</h1>There has been a lot going on in the world of Virtual Boy
+emulation lately, so I have decided to add a section with links,
+screenshots, and information from the different emulators released. I
+am NOT offering any ROMs on this site and DO NOT email me asking me for
+them because I will NOT give them out. Any emails requesting ROMs will
+be immediately deleted.
+<p>This list is a little out of date, so may or may not reflect
+the current state of emulation. If anyone has anything they would like
+to add to the list, please email me.</p>
+<p><br>
+Emulator / ROM Compatibility:</p>
+<p>Click the link at the top of the table to go to it's homepage.</p>
+<p>Note: Many of the previously released roms were bad dumps,
+this table assumes a good ROM dump.</p>
+<p>X = Completely Runs (may not be playable depending on speed of
+computer)<br>
+P = Playable, but requires -fixpal in Reality Boy and brightness hack
+on in Red Dragon<br>
+- = Won't boot<br>
+S = Boots to startup screens<br>
+G = Runs with glitches<br>
+? = Untested</p>
+<table bgcolor="#000000" border="1" bordercolor="#000000" width="100%">
+<tbody>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td bordercolor="#600000" width="30%">
+<div align="center">Game</div>
+</td>
+<td width="10%">
+<div align="center"><a href="http://www.nintendo.com/systemsclassic?type=vb" target="_blank">VB</a></div>
+</td>
+<td width="24%">
+<div align="center"><a href="http://goliathindustries.com/vb/" target="_blank">Reality
+Boy</a> / <a href="http://rdragon.vr32.de/" target="_blank">Red Dragon</a></div>
+</td>
+<td width="20%">
+<div align="center"><a href="http://www.emuunlim.com/VirtualE/" target="_blank">Virtual-E</a></div>
+</td>
+<td width="20%">
+<div align="center"><a href="http://www.bannister.org/" target="_blank">ViBE</a></div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Galactic Pinball</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">X / S</div>
+</td>
+<td width="20%">
+<div align="center">X</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Mario's Tennis</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">G</div>
+</td>
+<td width="20%">
+<div align="center">G</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Teleroboxer</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">X</div>
+</td>
+<td width="20%">
+<div align="center">X</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Mario Clash</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">G</div>
+</td>
+<td width="20%">
+<div align="center">G</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Virtual Boy Wario Land</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">S</div>
+</td>
+<td width="20%">
+<div align="center">S</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Virtual Boy Wario Land (Demo)</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">S</div>
+</td>
+<td width="20%">
+<div align="center">S</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Red Alarm (US)</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Red Alarm (Demo)</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Red Alarm (JAP)</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Virtual League Baseball</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">S</div>
+</td>
+<td width="20%">
+<div align="center">S</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Virtual Professional Baseball '95</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">S</div>
+</td>
+<td width="20%">
+<div align="center">S</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Jack Bros. (US)</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Jack Bros. (JAP)</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Golf (US)</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Golf (JAP)</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Panic Bomber (US)</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">P</div>
+</td>
+<td width="20%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Panic Bomber (JAP)</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">P</div>
+</td>
+<td width="20%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Vertical Force (US)</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">S</div>
+</td>
+<td width="20%">
+<div align="center">S</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Vertical Force (JAP)</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">S</div>
+</td>
+<td width="20%">
+<div align="center">S</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Waterworld</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">X</div>
+</td>
+<td width="20%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Nester's Funky Bowling</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">S</div>
+</td>
+<td width="20%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">3-D Tetris</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">V Tetris</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">X</div>
+</td>
+<td width="20%">
+<div align="center">S</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Space Squash</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">X</div>
+</td>
+<td width="20%">
+<div align="center">-</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Virtual Fishing</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">X</div>
+</td>
+<td width="20%">
+<div align="center">X</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Insmouse No Yakata</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">X</div>
+</td>
+<td width="20%">
+<div align="center">S</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Space Invaders: Virtual
+Collection</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">G</div>
+</td>
+<td width="20%">
+<div align="center">G</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Virtual Lab</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">S</div>
+</td>
+<td width="20%">
+<div align="center">S</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">SD Gundam Dimension War</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">S</div>
+</td>
+<td width="20%">
+<div align="center">S</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+<tr bordercolor="#600000" bgcolor="#000000">
+<td width="30%">
+<div align="center">Virtual Bowling</div>
+</td>
+<td width="10%">
+<div align="center">X</div>
+</td>
+<td width="24%">
+<div align="center">G</div>
+</td>
+<td width="20%">
+<div align="center">G</div>
+</td>
+<td width="20%">
+<div align="center">?</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="width: 200px;" id="left">
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Tech</div>
+<div class="navcontent">
+Repair
+<ul>
+<li><a href="../dissect.html">Dissecting the
+Virtual Boy</a></li>
+<li><a href="../displayfix.html">Fixing Glitchy
+Displays</a></li>
+</ul>
+Development
+<ul>
+<li><a href="../techinfo.html">Virtual Boy
+Technical Info</a></li>
+<li><a href="../programming.html">Programming /
+Emulation</a></li>
+<li><a href="../progcart.html">Reprogrammable
+Cart</a></li>
+<li><a href="../dumper.html">Cartridge Dumper</a></li>
+<li><a href="../debugger.html">VUE-Debugger</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Modifications</div>
+<div class="navcontent">Useful Mods
+<ul>
+<li><a href="../tvvga.html">TV/VGA Output</a></li>
+<li><a href="../linkcable.html">Link Cable</a></li>
+<li><a href="../rechargepack.html">Rechargable
+Battery
+Pack</a></li>
+<li><a href="../controllers.html">Controller
+Modifications</a></li>
+</ul>
+Fun Mods
+<ul>
+<li><a href="../rumble.html">Rumble Pack</a></li>
+<li><a href="../painting.html">Painting the VB</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Other Virtual Boy Stuff</div>
+<div class="navcontent">
+<ul>
+</ul>
+Virtual Boy Prototypes
+<ul>
+<li><a href="../proto_faceball.html">Faceball</a></li>
+<li><a href="../proto_vbowl.html">Virtual
+Bowling</a></li>
+</ul>
+Article Scans
+<ul>
+<li><a href="../scan_np.html">Nintendo
+Power</a></li>
+<li><a href="../scan_other.html">Others</a></li>
+</ul>
+Store Displays
+<ul>
+<li><a href="../disp_medium_us.html">Medium
+US Display</a></li>
+<li><a href="../disp_small_us.html">Small
+US Display</a></li>
+<li><a href="../disp_small_jp.html">Small
+JP Display</a></li>
+</ul>
+Misc
+<ul>
+<li><a href="../cheats.html">Cheats</a></li>
+<li><a href="../endings.html">Game Endings</a></li>
+<li><a href="../wants.html">Stuff I want for
+the VB</a></li>
+<li><a href="../coolstuff.html">Cool VB Stuff</a></li>
+<li><a href="../links.html">Links</a></li>
+</ul>
+Contact
+<ul>
+<li><a href="http://chat.vr32.de" target="_blank">Virtual
+Boy Chat</a></li>
+<li><a href="../email.jpg">Email
+Me</a></li>
+</ul>
+<ul>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Search Project: VB</div>
+<div class="navcontent">
+<form method="get" name="tipue" action="search.html">
+<table class="form_table" cellpadding="0" cellspacing="2">
+<tbody>
+<tr>
+<td class="form_td_left">
+<input name="d" class="field" type="text"></td>
+<td class="form_td_right">
+<input value="Search" class="button" type="submit"></td>
+</tr>
+</tbody>
+</table>
+</form>
+<script type="text/javascript" language="javascript">
+var sc_project=1721223; var sc_invisible=0; var sc_partition=16; var sc_security="28318578"; </script>
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script>
+<noscript><img
+src="http://c17.statcounter.com/counter.php?sc_project=1721223&java=0&security=28318578&invisible=0"
+border="0"> </noscript>
+</div>
+</div>
+</div>
+</div>
+</body></html>

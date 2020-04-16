@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>Project: Virtual Boy</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Project: Virtual Boy - A site dedicated to hacking the Nintendo Virtual Boy">
+<meta name="keywords" content="Nintendo,Virtual,Boy,Hack,Hacking,Mods,Modifications,Repair,Display,Problem,Prototype,gcc,gccvb,C,C++,Emulator,Emulation">
+<link rel="stylesheet" type="text/css" href="../style.css"></head>
+<body>
+<div style="width: 960px;" id="outer">
+<div class="red"></div>
+<div style="height: 24px;" id="location"><a href="../">Project:
+Virtual Boy</a>
+</div>
+<div style="margin-top: 0px; height: 18px;" id="sublocation">&nbsp;
+&nbsp;
+&nbsp;Virtual Boy Lives @ Project: VB</div>
+<div style="width: 745px;" id="right">
+<h1>Reading / Writing SRAM</h1>
+Here's a little how-to for converting a GB memory reader / writer to
+VB. Although this should work for all GB memory readers, I have only
+tested it with the Blaze MPXchanger. I got it for $10 at Electronics
+Boutique, and they had a lot of them that they were closing out, so you
+should go pick one up soon before they're all sold out! You should also
+know that the software doesn't support Windows 2000, and I couldn't
+find a new version that does support Windows 2000, so make sure you
+have access to a Win 9x computer (I haven't tested it in Windows XP
+with the compatibility mode, so it may work with that, or possibly in a
+Win 9x emulator (Wine, Virtual PC, etc.)
+<p align="left">&nbsp;</p>
+<p align="left"><img src="sramrw/rwer.jpg" height="413" width="387"></p>
+<p align="left">The cart read/writer, no modifications are
+done to this, so you can still use it for all the other uses too!</p>
+<p align="left">&nbsp;</p>
+<p align="left"><img src="sramrw/gbcart.jpg" height="302" width="285"></p>
+<p align="left">Then you need a gameboy cart with SRAM. I
+used Final Fantasy Legend II. You want to use an old game, not a new
+one (like the GB Color enhanced ones) with SRAM because the newer ones
+have 256kbit SRAM, and to make it easier, you should get one with
+64kbit SRAM (like the VB has). I know for sure that Final Fantasy
+Legend II and Legend of Zelda Link's Awakening have 64kbit sram, but
+the Legend of Zelda Link's Awakening DX (GBC enhanced) has 256kbit.</p>
+<p align="left">&nbsp;</p>
+<p align="left"><img src="sramrw/startwires.jpg" height="336" width="421"></p>
+<p align="left">Then you will need to remove the existing
+SRAM chip on the GB cart, get a 28 pin DIP socket, and solder wires to
+the GB edge pins (or directly to the SRAM pins if you want to make it
+harder on yourself ;-) ) You need to solder wires to every pin on the
+edge except: 2,5,19,20,21,30,31. Then you need to solder one wire to
+pin 20 on the SRAM connector. Make sure when soldering to the GB edge
+connector pins that you solder only to the very top of the pin, and
+don't get solder globs down lower on the pins because that is the
+connector for the cart too. Also note, you can not remove the ROM from
+the cart, if you do that, the MPXchanger won't recognize that there is
+a GB cart in it (although other read/writers may allow it, it doesn't
+hurt anything being there).</p>
+<p align="left">&nbsp;</p>
+<p align="left"><img src="sramrw/cartcase.jpg" height="274" width="600"></p>
+<p align="left">Then you need to cut a hole in the end of
+the case so the wires can stick out, and trim down the plastic piece
+that goes over the GB connector to accomadate for the wires being
+soldered there so the case doesn't bulge (but don't cut too much or the
+board might become kind of loose in the case).</p>
+<p align="left">&nbsp;</p>
+<p align="left"><img src="sramrw/wired.jpg" height="446" width="390"></p>
+<p align="left">Then you need to connect all the wires
+from the board to the socket as shown in <a href="sramrw/SRAMpins.txt" target="_blank">this file</a>.</p>
+<p align="left">&nbsp;</p>
+<p align="left"><img src="sramrw/testfit.jpg" height="293" width="277"></p>
+<p align="left">Then you should stick it all in the case
+and see how it fits.</p>
+<p align="left">&nbsp;</p>
+<p align="left"><img src="sramrw/socketscrew.jpg" height="315" width="566"></p>
+<p align="left">Then I drilled a hole in the board and
+stuck a screw into it so it would at least hold it in fairly well so
+there wouldn't be stress on the wires.</p>
+<p align="left">&nbsp;</p>
+<p align="left"><img src="sramrw/cartdone.jpg" height="480" width="640"></p>
+<p align="left">And here's the finished adapter w/ the
+sticker peeled off.</p>
+<p align="left">&nbsp;</p>
+<p align="left"><img src="sramrw/rwsetup.jpg" height="334" width="438"></p>
+<p align="left">Here it is all connected through the
+dumper (which needs to be slightly modified (as shown in <a href="dumper/DumperJumper.txt" target="_blank">this file</a>) to
+work for SRAM).</p>
+<p align="left">&nbsp;</p>
+<p align="left"><img src="sramrw/xchanger.jpg" height="374" width="415"></p>
+<p align="left">Then you run the software, click GB, then
+left arrow reads the cart, right arrow writes the cart. The format it
+saves it in is it's own header for the first 192 bytes, then the actual
+SRAM dump starts at address 0xC0. I have sent an SRAM dump from Reality
+Boy and it worked with no problems on the actual VB.</p>
+</div>
+<div style="width: 200px;" id="left">
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Tech</div>
+<div class="navcontent">
+Repair
+<ul>
+<li><a href="../dissect.html">Dissecting the
+Virtual Boy</a></li>
+<li><a href="../displayfix.html">Fixing Glitchy
+Displays</a></li>
+</ul>
+Development
+<ul>
+<li><a href="../techinfo.html">Virtual Boy
+Technical Info</a></li>
+<li><a href="../programming.html">Programming /
+Emulation</a></li>
+<li><a href="../progcart.html">Reprogrammable
+Cart</a></li>
+<li><a href="../dumper.html">Cartridge Dumper</a></li>
+<li><a href="../debugger.html">VUE-Debugger</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Modifications</div>
+<div class="navcontent">Useful Mods
+<ul>
+<li><a href="../tvvga.html">TV/VGA Output</a></li>
+<li><a href="../linkcable.html">Link Cable</a></li>
+<li><a href="../rechargepack.html">Rechargable
+Battery
+Pack</a></li>
+<li><a href="../controllers.html">Controller
+Modifications</a></li>
+</ul>
+Fun Mods
+<ul>
+<li><a href="../rumble.html">Rumble Pack</a></li>
+<li><a href="../painting.html">Painting the VB</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Other Virtual Boy Stuff</div>
+<div class="navcontent">
+<ul>
+</ul>
+Virtual Boy Prototypes
+<ul>
+<li><a href="../proto_faceball.html">Faceball</a></li>
+<li><a href="../proto_vbowl.html">Virtual
+Bowling</a></li>
+</ul>
+Article Scans
+<ul>
+<li><a href="../scan_np.html">Nintendo
+Power</a></li>
+<li><a href="../scan_other.html">Others</a></li>
+</ul>
+Store Displays
+<ul>
+<li><a href="../disp_medium_us.html">Medium
+US Display</a></li>
+<li><a href="../disp_small_us.html">Small
+US Display</a></li>
+<li><a href="../disp_small_jp.html">Small
+JP Display</a></li>
+</ul>
+Misc
+<ul>
+<li><a href="../cheats.html">Cheats</a></li>
+<li><a href="../endings.html">Game Endings</a></li>
+<li><a href="../wants.html">Stuff I want for
+the VB</a></li>
+<li><a href="../coolstuff.html">Cool VB Stuff</a></li>
+<li><a href="../links.html">Links</a></li>
+</ul>
+Contact
+<ul>
+<li><a href="http://chat.vr32.de" target="_blank">Virtual
+Boy Chat</a></li>
+<li><a href="../email.jpg">Email
+Me</a></li>
+</ul>
+<ul>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Search Project: VB</div>
+<div class="navcontent">
+<form method="get" name="tipue" action="search.html">
+<table class="form_table" cellpadding="0" cellspacing="2">
+<tbody>
+<tr>
+<td class="form_td_left">
+<input name="d" class="field" type="text"></td>
+<td class="form_td_right">
+<input value="Search" class="button" type="submit"></td>
+</tr>
+</tbody>
+</table>
+</form>
+<script type="text/javascript" language="javascript">
+var sc_project=1721223; var sc_invisible=0; var sc_partition=16; var sc_security="28318578"; </script>
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script>
+<noscript><img
+src="http://c17.statcounter.com/counter.php?sc_project=1721223&java=0&security=28318578&invisible=0"
+border="0"> </noscript>
+</div>
+</div>
+</div>
+</div>
+</body></html>

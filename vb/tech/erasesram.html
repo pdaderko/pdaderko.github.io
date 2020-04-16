@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>Project: Virtual Boy</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Project: Virtual Boy - A site dedicated to hacking the Nintendo Virtual Boy">
+<meta name="keywords" content="Nintendo,Virtual,Boy,Hack,Hacking,Mods,Modifications,Repair,Display,Problem,Prototype,gcc,gccvb,C,C++,Emulator,Emulation">
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div style="width: 960px;" id="outer">
+<div class="red"></div>
+<div style="height: 24px;" id="location"><a href="../">Project:
+Virtual Boy</a>
+</div>
+<div style="margin-top: 0px; height: 18px;" id="sublocation">&nbsp;
+&nbsp;
+&nbsp;Virtual Boy Lives @ Project: VB</div>
+<div style="width: 745px;" id="right">
+<h1>Erasing Battery Backed SRAM</h1>
+To erase the SRAM (which stores your save games / high scores), you can
+do a couple things...
+<p align="left">&nbsp;</p>
+<p align="left">1) You can open the cartridge and pull out
+the battery for a short period of time, then put it back in (which
+isn't easy since the battery is attached to the board).</p>
+<p align="left">2) You can open the cartridge and short
+out the + and - of the battery for a short period of time.</p>
+<p align="left">3) This is the easiest since you don't
+have to open the cart... stick a very small wire in each pin 54 and pin
+60, take a AAA battery (probably doesn't have to be, but that's what I
+tried it with - but make sure it is low voltage, near 1.5V), and touch
+the wire in pin 54 to "-" on the battery, and pin 60 to "+" on the
+battery... but don't hold it there, just touch it really quick (there's
+a chip on the board that gets hot if you hold it there for more than a
+couple seconds).</p>
+<p align="left"><img src="erasesram/SRAMpins.jpg" height="82" width="503"></p>
+<p align="left">&nbsp;</p>
+<p align="left">Then try the game out, and all the save
+games / high scores should be cleared... if they aren't, you probably
+didn't do whichever option you chose long enough or you did it
+incorrectly.</p>
+<p align="left">This is great for those of you that bought
+games used, and have high scores / save games from the last person that
+owned it, or just want to start over again. I know this can be useful
+for Galactic Pinball since that game doesn't have a reset high scores
+option as far as I know... but there may be other games this might be
+useful for. Of course I wouldn't do this if there's an option to erase
+a save game inside the game, but if there's no choice, these will work.</p>
+<p align="left">As always, this has never damaged any of
+my games, but I haven't tested it extensively, so do this at your own
+risk, and I'm not responsible if this screws up your game.</p>
+</div>
+<div style="width: 200px;" id="left">
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Tech</div>
+<div class="navcontent">
+Repair
+<ul>
+<li><a href="../dissect.html">Dissecting the
+Virtual Boy</a></li>
+<li><a href="../displayfix.html">Fixing Glitchy
+Displays</a></li>
+</ul>
+Development
+<ul>
+<li><a href="../techinfo.html">Virtual Boy
+Technical Info</a></li>
+<li><a href="../programming.html">Programming /
+Emulation</a></li>
+<li><a href="../progcart.html">Reprogrammable
+Cart</a></li>
+<li><a href="../dumper.html">Cartridge Dumper</a></li>
+<li><a href="../debugger.html">VUE-Debugger</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Virtual Boy Modifications</div>
+<div class="navcontent">Useful Mods
+<ul>
+<li><a href="../tvvga.html">TV/VGA Output</a></li>
+<li><a href="../linkcable.html">Link Cable</a></li>
+<li><a href="../rechargepack.html">Rechargable
+Battery
+Pack</a></li>
+<li><a href="../controllers.html">Controller
+Modifications</a></li>
+</ul>
+Fun Mods
+<ul>
+<li><a href="../rumble.html">Rumble Pack</a></li>
+<li><a href="../painting.html">Painting the VB</a></li>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Other Virtual Boy Stuff</div>
+<div class="navcontent">
+<ul>
+</ul>
+Virtual Boy Prototypes
+<ul>
+<li><a href="../proto_faceball.html">Faceball</a></li>
+<li><a href="../proto_vbowl.html">Virtual
+Bowling</a></li>
+</ul>
+Article Scans
+<ul>
+<li><a href="../scan_np.html">Nintendo
+Power</a></li>
+<li><a href="../scan_other.html">Others</a></li>
+</ul>
+Store Displays
+<ul>
+<li><a href="../disp_medium_us.html">Medium
+US Display</a></li>
+<li><a href="../disp_small_us.html">Small
+US Display</a></li>
+<li><a href="../disp_small_jp.html">Small
+JP Display</a></li>
+</ul>
+Misc
+<ul>
+<li><a href="../cheats.html">Cheats</a></li>
+<li><a href="../endings.html">Game Endings</a></li>
+<li><a href="../wants.html">Stuff I want for
+the VB</a></li>
+<li><a href="../coolstuff.html">Cool VB Stuff</a></li>
+<li><a href="../links.html">Links</a></li>
+</ul>
+Contact
+<ul>
+<li><a href="http://chat.vr32.de" target="_blank">Virtual
+Boy Chat</a></li>
+<li><a href="../email.jpg">Email
+Me</a></li>
+</ul>
+<ul>
+</ul>
+</div>
+</div>
+<div class="navouter">
+<div class="red"></div>
+<div class="navheader">Search Project: VB</div>
+<div class="navcontent">
+<form method="get" name="tipue" action="search.html">
+<table class="form_table" cellpadding="0" cellspacing="2">
+<tbody>
+<tr>
+<td class="form_td_left">
+<input name="d" class="field" type="text"></td>
+<td class="form_td_right">
+<input value="Search" class="button" type="submit"></td>
+</tr>
+</tbody>
+</table>
+</form>
+<script type="text/javascript" language="javascript">
+var sc_project=1721223; var sc_invisible=0; var sc_partition=16; var sc_security="28318578"; </script>
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script>
+<noscript><img
+src="http://c17.statcounter.com/counter.php?sc_project=1721223&java=0&security=28318578&invisible=0"
+border="0"> </noscript>
+</div>
+</div>
+</div>
+</div>
+</body></html>

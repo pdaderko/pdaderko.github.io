@@ -1,0 +1,16 @@
+Required modifications to the dumper
+
+You should hook up jumpers to change these pins to their required position, but still able to change back to regular cart dumper.
+
+Everything is done to "chip" 1 only
+
+The "chip" is referred to a 28 pin chip from now on, ignoring pins 1,2,31,32 - I.E. pin 3 on the 32 pin chip is now pin 1 on the "28 pin chip"
+
+
+CHANGES
+
+Connect pin 20 of the "chip" to pin 6 on the VB edge
+
+Connect pin 28 of the "chip" to pin 8 on the VB edge
+
+Connect pin 7 on the VB edge to Vcc (pin 8 on the VB edge) - for some reason the VB SRAM controller has problems giving power to CS2 quickly enough, so you have to manually power it.
